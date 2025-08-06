@@ -1322,3 +1322,49 @@ stack traceback:
         Holdon:   0
         Waiting:  0
 ==============================================
+[00:02:24.585][debug][#0:script/service/service.lua:136]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 46.720 MB
+        # 00 : 39.491 MB
+        # 01 : 1.699 MB
+        # 02 : 1.940 MB
+        # 03 : 1.892 MB
+        # 04 : 1.699 MB
+    --------------- Coroutine ---------------
+        Total:     32
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      32
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    --------------- Proto ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[00:03:24.855][debug][#0:script/service/service.lua:136]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 47.049 MB
+        # 00 : 39.820 MB
+        # 01 : 1.699 MB
+        # 02 : 1.940 MB
+        # 03 : 1.892 MB
+        # 04 : 1.699 MB
+    --------------- Coroutine ---------------
+        Total:     32
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      32
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    --------------- Proto ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[00:03:42.476][info] [#0:script/provider/provider.lua:194]: Server shutdown.
+[00:03:42.484][info] [#0:script/provider/provider.lua:189]: Server exited.
