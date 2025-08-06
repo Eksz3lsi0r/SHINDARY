@@ -1,12 +1,12 @@
-[23:37:24.186][info] [#0:/Users/alanalo/.vscode/extensions/nightrains.robloxlsp-1.6.8/server/main.lua:54]: Lua Lsp startup, root: 	/Users/alanalo/.vscode/extensions/nightrains.robloxlsp-1.6.8/server
-[23:37:24.187][debug][#0:/Users/alanalo/.vscode/extensions/nightrains.robloxlsp-1.6.8/server/main.lua:55]: ROOT:	/Users/alanalo/.vscode/extensions/nightrains.robloxlsp-1.6.8/server
-[23:37:24.187][debug][#0:/Users/alanalo/.vscode/extensions/nightrains.robloxlsp-1.6.8/server/main.lua:56]: LOGPATH:	.vscode/roblox-lsp.log,--loglevel=information
-[23:37:24.187][debug][#0:/Users/alanalo/.vscode/extensions/nightrains.robloxlsp-1.6.8/server/main.lua:57]: METAPATH:	/Users/alanalo/.vscode/extensions/nightrains.robloxlsp-1.6.8/server/meta
-[23:37:24.406][info] [#0:script/pub/pub.lua:48]: Create brave:	1
-[23:37:24.417][info] [#0:script/pub/pub.lua:48]: Create brave:	2
-[23:37:24.417][info] [#0:script/pub/pub.lua:48]: Create brave:	3
-[23:37:24.417][info] [#0:script/pub/pub.lua:48]: Create brave:	4
-[23:37:24.417][debug][#0:script/service/service.lua:136]: 
+[00:06:45.135][info] [#0:/Users/alanalo/.vscode/extensions/nightrains.robloxlsp-1.6.8/server/main.lua:54]: Lua Lsp startup, root: 	/Users/alanalo/.vscode/extensions/nightrains.robloxlsp-1.6.8/server
+[00:06:45.137][debug][#0:/Users/alanalo/.vscode/extensions/nightrains.robloxlsp-1.6.8/server/main.lua:55]: ROOT:	/Users/alanalo/.vscode/extensions/nightrains.robloxlsp-1.6.8/server
+[00:06:45.137][debug][#0:/Users/alanalo/.vscode/extensions/nightrains.robloxlsp-1.6.8/server/main.lua:56]: LOGPATH:	.vscode/roblox-lsp.log,--loglevel=information
+[00:06:45.137][debug][#0:/Users/alanalo/.vscode/extensions/nightrains.robloxlsp-1.6.8/server/main.lua:57]: METAPATH:	/Users/alanalo/.vscode/extensions/nightrains.robloxlsp-1.6.8/server/meta
+[00:06:45.250][info] [#0:script/pub/pub.lua:48]: Create brave:	1
+[00:06:45.250][info] [#0:script/pub/pub.lua:48]: Create brave:	2
+[00:06:45.250][info] [#0:script/pub/pub.lua:48]: Create brave:	3
+[00:06:45.250][info] [#0:script/pub/pub.lua:48]: Create brave:	4
+[00:06:45.250][debug][#0:script/service/service.lua:136]: 
 ========= Medical Examination Report =========
     --------------- Memory ---------------
         Total: 1.878 MB
@@ -28,7 +28,7 @@
         Holdon:   0
         Waiting:  0
 ==============================================
-[23:37:24.553][debug][#0:script/provider/client.lua:73]: Client init	{
+[00:06:45.317][debug][#0:script/provider/client.lua:73]: Client init	{
     capabilities = {
         general = {
             markdown = {
@@ -493,11 +493,11 @@
         version = "1.102.3",
     },
     locale = "en",
-    processId = 26192,
+    processId = 27080,
     rootPath = "/Users/alanalo/Documents/kloa",
     rootUri = "file:///Users/alanalo/Documents/kloa",
     trace = "off",
-    workDoneToken = "7525434c-c86f-41c4-b5c4-721b1bf0c49c",
+    workDoneToken = "7e071651-7246-434c-99b3-d37bac1530c6",
     workspaceFolders = {
         [1] = {
             name = "kloa",
@@ -505,7 +505,7 @@
         },
     },
 }
-[23:37:24.553][info] [#0:script/language.lua:135]: VSC language: en
-[23:37:24.553][info] [#0:script/language.lua:136]: LS  language: en-us
-[23:37:24.553][info] [#0:script/workspace/workspace.lua:32]: Workspace inited: 	file:///Users/alanalo/Documents/kloa
-[23:37:24.554][info] [#0:script/workspace/workspace.lua:39]: Log path: 	.vscode/roblox-lsp.log,--loglevel=information/file_Users_alanalo_Documents_kloa.log
+[00:06:45.317][info] [#0:script/language.lua:135]: VSC language: en
+[00:06:45.317][info] [#0:script/language.lua:136]: LS  language: en-us
+[00:06:45.317][info] [#0:script/workspace/workspace.lua:32]: Workspace inited: 	file:///Users/alanalo/Documents/kloa
+[00:06:45.317][info] [#0:script/workspace/workspace.lua:39]: Log path: 	.vscode/roblox-lsp.log,--loglevel=information/file_Users_alanalo_Documents_kloa.log

@@ -1,12 +1,12 @@
-[23:37:24.186][info] [#0:/Users/alanalo/.vscode/extensions/nightrains.robloxlsp-1.6.8/server/main.lua:54]: Lua Lsp startup, root: 	/Users/alanalo/.vscode/extensions/nightrains.robloxlsp-1.6.8/server
-[23:37:24.187][debug][#0:/Users/alanalo/.vscode/extensions/nightrains.robloxlsp-1.6.8/server/main.lua:55]: ROOT:	/Users/alanalo/.vscode/extensions/nightrains.robloxlsp-1.6.8/server
-[23:37:24.187][debug][#0:/Users/alanalo/.vscode/extensions/nightrains.robloxlsp-1.6.8/server/main.lua:56]: LOGPATH:	.vscode/roblox-lsp.log,--loglevel=information
-[23:37:24.187][debug][#0:/Users/alanalo/.vscode/extensions/nightrains.robloxlsp-1.6.8/server/main.lua:57]: METAPATH:	/Users/alanalo/.vscode/extensions/nightrains.robloxlsp-1.6.8/server/meta
-[23:37:24.406][info] [#0:script/pub/pub.lua:48]: Create brave:	1
-[23:37:24.417][info] [#0:script/pub/pub.lua:48]: Create brave:	2
-[23:37:24.417][info] [#0:script/pub/pub.lua:48]: Create brave:	3
-[23:37:24.417][info] [#0:script/pub/pub.lua:48]: Create brave:	4
-[23:37:24.417][debug][#0:script/service/service.lua:136]: 
+[00:06:45.135][info] [#0:/Users/alanalo/.vscode/extensions/nightrains.robloxlsp-1.6.8/server/main.lua:54]: Lua Lsp startup, root: 	/Users/alanalo/.vscode/extensions/nightrains.robloxlsp-1.6.8/server
+[00:06:45.137][debug][#0:/Users/alanalo/.vscode/extensions/nightrains.robloxlsp-1.6.8/server/main.lua:55]: ROOT:	/Users/alanalo/.vscode/extensions/nightrains.robloxlsp-1.6.8/server
+[00:06:45.137][debug][#0:/Users/alanalo/.vscode/extensions/nightrains.robloxlsp-1.6.8/server/main.lua:56]: LOGPATH:	.vscode/roblox-lsp.log,--loglevel=information
+[00:06:45.137][debug][#0:/Users/alanalo/.vscode/extensions/nightrains.robloxlsp-1.6.8/server/main.lua:57]: METAPATH:	/Users/alanalo/.vscode/extensions/nightrains.robloxlsp-1.6.8/server/meta
+[00:06:45.250][info] [#0:script/pub/pub.lua:48]: Create brave:	1
+[00:06:45.250][info] [#0:script/pub/pub.lua:48]: Create brave:	2
+[00:06:45.250][info] [#0:script/pub/pub.lua:48]: Create brave:	3
+[00:06:45.250][info] [#0:script/pub/pub.lua:48]: Create brave:	4
+[00:06:45.250][debug][#0:script/service/service.lua:136]: 
 ========= Medical Examination Report =========
     --------------- Memory ---------------
         Total: 1.878 MB
@@ -28,7 +28,7 @@
         Holdon:   0
         Waiting:  0
 ==============================================
-[23:37:24.553][debug][#0:script/provider/client.lua:73]: Client init	{
+[00:06:45.317][debug][#0:script/provider/client.lua:73]: Client init	{
     capabilities = {
         general = {
             markdown = {
@@ -493,11 +493,11 @@
         version = "1.102.3",
     },
     locale = "en",
-    processId = 26192,
+    processId = 27080,
     rootPath = "/Users/alanalo/Documents/kloa",
     rootUri = "file:///Users/alanalo/Documents/kloa",
     trace = "off",
-    workDoneToken = "7525434c-c86f-41c4-b5c4-721b1bf0c49c",
+    workDoneToken = "7e071651-7246-434c-99b3-d37bac1530c6",
     workspaceFolders = {
         [1] = {
             name = "kloa",
@@ -505,11 +505,12 @@
         },
     },
 }
-[23:37:24.553][info] [#0:script/language.lua:135]: VSC language: en
-[23:37:24.553][info] [#0:script/language.lua:136]: LS  language: en-us
-[23:37:24.553][info] [#0:script/workspace/workspace.lua:32]: Workspace inited: 	file:///Users/alanalo/Documents/kloa
-[23:37:24.554][info] [#0:script/workspace/workspace.lua:39]: Log path: 	.vscode/roblox-lsp.log,--loglevel=information/file_Users_alanalo_Documents_kloa.log
-[23:37:25.553][error][#0:script/config.lua:265]: script/config.lua:265: bad argument #1 to 'for iterator' (table expected, got boolean)
+[00:06:45.317][info] [#0:script/language.lua:135]: VSC language: en
+[00:06:45.317][info] [#0:script/language.lua:136]: LS  language: en-us
+[00:06:45.317][info] [#0:script/workspace/workspace.lua:32]: Workspace inited: 	file:///Users/alanalo/Documents/kloa
+[00:06:45.317][info] [#0:script/workspace/workspace.lua:39]: Log path: 	.vscode/roblox-lsp.log,--loglevel=information/file_Users_alanalo_Documents_kloa.log
+[00:06:45.816][debug][#0:script/provider/provider.lua:295]: didOpen	file:///Users/alanalo/Documents/kloa/src/client/controllers/CameraController.lua
+[00:06:45.817][error][#0:script/config.lua:265]: script/config.lua:265: bad argument #1 to 'for iterator' (table expected, got boolean)
 stack traceback:
 	script/config.lua:265: in function <script/config.lua:263>
 	[C]: in function 'xpcall'
@@ -518,80 +519,56 @@ stack traceback:
 	script/provider/provider.lua:147: in function <script/provider/provider.lua:144>
 	[C]: in function 'xpcall'
 	script/proto/proto.lua:143: in function <script/proto/proto.lua:122>
-[23:37:25.553][debug][#0:script/provider/completion.lua:26]: Enable completion.
-[23:37:25.609][debug][#0:script/provider/semantic-tokens.lua:32]: Enable semantic tokens.
-[23:37:28.508][debug][#0:script/provider/semantic-tokens.lua:111]: Refresh semantic tokens.
-[23:37:28.509][debug][#0:script/proto/proto.lua:131]: Method [initialized] takes [1.732]sec.
-[23:37:28.509][info] [#0:script/workspace/workspace.lua:302]: Preload start.
-[23:37:28.509][info] [#0:script/workspace/workspace.lua:82]: Ignore directory:	1
-[23:37:28.509][info] [#0:script/workspace/workspace.lua:82]: Ignore directory:	2
-[23:37:28.510][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	*.rbxl
-[23:37:28.510][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	*.rbxlx
-[23:37:28.511][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	*.rbxm
-[23:37:28.511][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	build/
-[23:37:28.511][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	.vscode/roblox-lsp.log
-[23:37:28.511][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	node_modules/
-[23:37:28.511][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	npm-debug.log*
-[23:37:28.512][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	.DS_Store
-[23:37:28.512][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	Thumbs.db
-[23:37:28.512][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	Packages/
-[23:37:28.512][info] [#0:script/workspace/workspace.lua:312]: Scan files at:	/Users/alanalo/Documents/kloa
-[23:37:28.514][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/client/controllers/CameraController.lua , size = 6.490 KB
-[23:37:28.515][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/client/controllers/PlayerController.client.lua , size = 18.168 KB
-[23:37:28.515][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/client/controllers/EnhancedPlayerController.client.lua , size = 12.687 KB
-[23:37:28.515][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/client/modules/AudioController.lua , size = 8.370 KB
-[23:37:28.516][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/client/modules/InputHandler.lua , size = 5.843 KB
-[23:37:28.516][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/client/modules/EffectsController.lua , size = 9.488 KB
-[23:37:28.516][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/client/EnhancedPlayerController.client.lua , size = 0.723 KB
-[23:37:28.517][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/client/ui/UIController.lua , size = 16.159 KB
-[23:37:28.517][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/shared/SegmentSpawner.lua , size = 17.963 KB
-[23:37:28.517][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/shared/GameConfig.lua , size = 2.488 KB
-[23:37:28.518][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/shared/ObjectPool.lua , size = 3.921 KB
-[23:37:28.518][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/shared/SubwaySurfersGameplay.lua , size = 7.125 KB
-[23:37:28.518][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/shared/GameState.lua , size = 2.403 KB
-[23:37:28.518][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/server/services/PlayerService.server.lua , size = 0.634 KB
-[23:37:28.519][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/server/GameLoopManager.lua , size = 19.892 KB
-[23:37:28.519][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/server/DynamicWorldGenerator.lua , size = 14.992 KB
-[23:37:28.519][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/server/ObstacleService.lua , size = 14.255 KB
-[23:37:28.519][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/server/GameCoordinator.lua , size = 6.837 KB
-[23:37:28.520][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/server/ScoreService.lua , size = 6.325 KB
-[23:37:28.520][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/server/WorldBuilder.lua , size = 9.545 KB
-[23:37:28.520][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/server/ServiceInitializer.server.lua , size = 3.731 KB
-[23:37:28.520][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/server/RemoteEventsService.lua , size = 2.090 KB
-[23:37:28.520][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/server/PowerUpService.lua , size = 13.304 KB
-[23:37:28.520][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/server/PlayerDataService.lua , size = 2.593 KB
-[23:37:28.520][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/server/SubwaySurfersLauncher.server.lua , size = 0.850 KB
-[23:37:28.523][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/UpdatedService.module.lua , size = 0.000 KB
-[23:37:28.526][info] [#0:script/workspace/workspace.lua:315]: Found 26 files.
-[23:37:28.526][info] [#0:script/workspace/workspace.lua:317]: Loaded 26/26 files
-[23:37:28.526][info] [#0:script/workspace/workspace.lua:326]: Preload finish.
-[23:37:30.352][debug][#0:script/provider/diagnostic.lua:228]: publishDiagnostics	file:///Users/alanalo/Documents/kloa/src/client/EnhancedPlayerController.client.lua	1
-[23:37:30.492][debug][#0:script/provider/diagnostic.lua:386]: 全文诊断耗时：	0.832306
-[23:37:51.868][debug][#0:script/provider/provider.lua:295]: didOpen	file:///Users/alanalo/Documents/kloa/src/client/controllers/CameraController.lua
-[23:38:11.173][debug][#0:script/provider/provider.lua:307]: didClose	file:///Users/alanalo/Documents/kloa/src/client/controllers/CameraController.lua
-[23:38:24.804][debug][#0:script/service/service.lua:136]: 
-========= Medical Examination Report =========
-    --------------- Memory ---------------
-        Total: 77.023 MB
-        # 00 : 70.014 MB
-        # 01 : 1.699 MB
-        # 02 : 1.807 MB
-        # 03 : 1.805 MB
-        # 04 : 1.699 MB
-    --------------- Coroutine ---------------
-        Total:     31
-        Running:   0
-        Suspended: 0
-        Normal:    0
-        Dead:      31
-    --------------- Cache ---------------
-        Total: 1
-        Dead:  0
-    --------------- Proto ---------------
-        Holdon:   0
-        Waiting:  0
-==============================================
-[23:39:06.957][error][#0:script/config.lua:265]: script/config.lua:265: bad argument #1 to 'for iterator' (table expected, got boolean)
+[00:06:45.817][debug][#0:script/provider/completion.lua:26]: Enable completion.
+[00:06:45.828][debug][#0:script/provider/semantic-tokens.lua:32]: Enable semantic tokens.
+[00:06:48.103][debug][#0:script/provider/semantic-tokens.lua:111]: Refresh semantic tokens.
+[00:06:48.103][debug][#0:script/proto/proto.lua:131]: Method [initialized] takes [1.531]sec.
+[00:06:48.103][debug][#0:script/proto/proto.lua:131]: Method [textDocument/didOpen] takes [1.527]sec.
+[00:06:48.103][info] [#0:script/workspace/workspace.lua:302]: Preload start.
+[00:06:48.103][info] [#0:script/workspace/workspace.lua:82]: Ignore directory:	1
+[00:06:48.103][info] [#0:script/workspace/workspace.lua:82]: Ignore directory:	2
+[00:06:48.104][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	*.rbxl
+[00:06:48.104][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	*.rbxlx
+[00:06:48.104][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	*.rbxm
+[00:06:48.104][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	build/
+[00:06:48.104][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	.vscode/roblox-lsp.log
+[00:06:48.104][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	node_modules/
+[00:06:48.104][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	npm-debug.log*
+[00:06:48.104][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	.DS_Store
+[00:06:48.104][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	Thumbs.db
+[00:06:48.104][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	Packages/
+[00:06:48.104][info] [#0:script/workspace/workspace.lua:312]: Scan files at:	/Users/alanalo/Documents/kloa
+[00:06:48.106][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/client/controllers/CameraController.lua , size = 8.974 KB
+[00:06:48.106][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/client/controllers/PlayerController.client.lua , size = 18.168 KB
+[00:06:48.106][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/client/controllers/EnhancedPlayerController.client.lua , size = 12.687 KB
+[00:06:48.107][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/client/modules/InputHandler.lua , size = 5.843 KB
+[00:06:48.107][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/client/modules/AudioController.lua , size = 8.370 KB
+[00:06:48.108][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/client/modules/EffectsController.lua , size = 9.488 KB
+[00:06:48.108][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/client/EnhancedPlayerController.client.lua , size = 0.723 KB
+[00:06:48.108][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/client/ui/UIController.lua , size = 16.159 KB
+[00:06:48.109][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/shared/SegmentSpawner.lua , size = 17.963 KB
+[00:06:48.109][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/shared/GameConfig.lua , size = 2.488 KB
+[00:06:48.109][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/shared/ObjectPool.lua , size = 3.921 KB
+[00:06:48.109][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/shared/GameState.lua , size = 2.403 KB
+[00:06:48.109][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/shared/SubwaySurfersGameplay.lua , size = 7.125 KB
+[00:06:48.109][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/server/services/PlayerService.server.lua , size = 0.634 KB
+[00:06:48.110][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/server/GameLoopManager.lua , size = 19.892 KB
+[00:06:48.111][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/server/DynamicWorldGenerator.lua , size = 14.992 KB
+[00:06:48.111][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/server/GameCoordinator.lua , size = 6.837 KB
+[00:06:48.111][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/server/ObstacleService.lua , size = 14.255 KB
+[00:06:48.111][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/server/ScoreService.lua , size = 6.325 KB
+[00:06:48.111][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/server/WorldBuilder.lua , size = 9.545 KB
+[00:06:48.111][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/server/ServiceInitializer.server.lua , size = 3.731 KB
+[00:06:48.111][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/server/RemoteEventsService.lua , size = 2.090 KB
+[00:06:48.111][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/server/PlayerDataService.lua , size = 2.593 KB
+[00:06:48.111][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/server/PowerUpService.lua , size = 13.304 KB
+[00:06:48.111][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/server/SubwaySurfersLauncher.server.lua , size = 0.850 KB
+[00:06:48.112][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/UpdatedService.module.lua , size = 0.000 KB
+[00:06:48.133][info] [#0:script/workspace/workspace.lua:315]: Found 26 files.
+[00:06:48.133][info] [#0:script/workspace/workspace.lua:317]: Loaded 26/26 files
+[00:06:48.133][info] [#0:script/workspace/workspace.lua:326]: Preload finish.
+[00:06:50.754][debug][#0:script/provider/diagnostic.lua:228]: publishDiagnostics	file:///Users/alanalo/Documents/kloa/src/client/controllers/CameraController.lua	12
+[00:06:50.919][error][#0:script/config.lua:265]: script/config.lua:265: bad argument #1 to 'for iterator' (table expected, got boolean)
 stack traceback:
 	script/config.lua:265: in function <script/config.lua:263>
 	[C]: in function 'xpcall'
@@ -600,7 +577,8 @@ stack traceback:
 	script/provider/provider.lua:199: in function <script/provider/provider.lua:198>
 	[C]: in function 'xpcall'
 	script/proto/proto.lua:143: in function <script/proto/proto.lua:122>
-[23:39:13.605][error][#0:script/config.lua:265]: script/config.lua:265: bad argument #1 to 'for iterator' (table expected, got boolean)
+[00:06:50.919][debug][#0:script/proto/proto.lua:131]: Method [workspace/didChangeConfiguration] takes [0.884]sec.
+[00:06:50.964][error][#0:script/config.lua:265]: script/config.lua:265: bad argument #1 to 'for iterator' (table expected, got boolean)
 stack traceback:
 	script/config.lua:265: in function <script/config.lua:263>
 	[C]: in function 'xpcall'
@@ -609,7 +587,8 @@ stack traceback:
 	script/provider/provider.lua:199: in function <script/provider/provider.lua:198>
 	[C]: in function 'xpcall'
 	script/proto/proto.lua:143: in function <script/proto/proto.lua:122>
-[23:39:17.883][error][#0:script/config.lua:265]: script/config.lua:265: bad argument #1 to 'for iterator' (table expected, got boolean)
+[00:06:50.965][debug][#0:script/proto/proto.lua:131]: Method [workspace/didChangeConfiguration] takes [0.921]sec.
+[00:06:50.991][error][#0:script/config.lua:265]: script/config.lua:265: bad argument #1 to 'for iterator' (table expected, got boolean)
 stack traceback:
 	script/config.lua:265: in function <script/config.lua:263>
 	[C]: in function 'xpcall'
@@ -618,7 +597,8 @@ stack traceback:
 	script/provider/provider.lua:199: in function <script/provider/provider.lua:198>
 	[C]: in function 'xpcall'
 	script/proto/proto.lua:143: in function <script/proto/proto.lua:122>
-[23:39:18.938][error][#0:script/config.lua:265]: script/config.lua:265: bad argument #1 to 'for iterator' (table expected, got boolean)
+[00:06:50.991][debug][#0:script/proto/proto.lua:131]: Method [workspace/didChangeConfiguration] takes [0.947]sec.
+[00:06:50.992][error][#0:script/config.lua:265]: script/config.lua:265: bad argument #1 to 'for iterator' (table expected, got boolean)
 stack traceback:
 	script/config.lua:265: in function <script/config.lua:263>
 	[C]: in function 'xpcall'
@@ -627,476 +607,10 @@ stack traceback:
 	script/provider/provider.lua:199: in function <script/provider/provider.lua:198>
 	[C]: in function 'xpcall'
 	script/proto/proto.lua:143: in function <script/proto/proto.lua:122>
-[23:39:25.061][debug][#0:script/service/service.lua:136]: 
-========= Medical Examination Report =========
-    --------------- Memory ---------------
-        Total: 77.483 MB
-        # 00 : 70.474 MB
-        # 01 : 1.699 MB
-        # 02 : 1.807 MB
-        # 03 : 1.805 MB
-        # 04 : 1.699 MB
-    --------------- Coroutine ---------------
-        Total:     47
-        Running:   0
-        Suspended: 0
-        Normal:    0
-        Dead:      47
-    --------------- Cache ---------------
-        Total: 1
-        Dead:  0
-    --------------- Proto ---------------
-        Holdon:   0
-        Waiting:  0
-==============================================
-[23:40:24.290][debug][#0:script/service/service.lua:136]: 
-========= Medical Examination Report =========
-    --------------- Memory ---------------
-        Total: 77.813 MB
-        # 00 : 70.804 MB
-        # 01 : 1.699 MB
-        # 02 : 1.807 MB
-        # 03 : 1.805 MB
-        # 04 : 1.699 MB
-    --------------- Coroutine ---------------
-        Total:     47
-        Running:   0
-        Suspended: 0
-        Normal:    0
-        Dead:      47
-    --------------- Cache ---------------
-        Total: 1
-        Dead:  0
-    --------------- Proto ---------------
-        Holdon:   0
-        Waiting:  0
-==============================================
-[23:40:49.971][debug][#0:script/provider/provider.lua:295]: didOpen	file:///Users/alanalo/Documents/kloa/src/client/controllers/CameraController.lua
-[23:41:03.480][debug][#0:script/provider/diagnostic.lua:228]: publishDiagnostics	file:///Users/alanalo/Documents/kloa/src/client/controllers/CameraController.lua	1
-[23:41:03.595][debug][#0:script/provider/diagnostic.lua:228]: publishDiagnostics	file:///Users/alanalo/Documents/kloa/src/client/controllers/CameraController.lua	2
-[23:41:04.054][debug][#0:script/provider/diagnostic.lua:346]: 全文诊断耗时：	0.294869
-[23:41:24.529][debug][#0:script/service/service.lua:136]: 
-========= Medical Examination Report =========
-    --------------- Memory ---------------
-        Total: 77.901 MB
-        # 00 : 70.892 MB
-        # 01 : 1.699 MB
-        # 02 : 1.807 MB
-        # 03 : 1.805 MB
-        # 04 : 1.699 MB
-    --------------- Coroutine ---------------
-        Total:     26
-        Running:   0
-        Suspended: 0
-        Normal:    0
-        Dead:      26
-    --------------- Cache ---------------
-        Total: 1
-        Dead:  0
-    --------------- Proto ---------------
-        Holdon:   0
-        Waiting:  0
-==============================================
-[23:41:26.120][debug][#0:script/provider/diagnostic.lua:228]: publishDiagnostics	file:///Users/alanalo/Documents/kloa/src/client/controllers/CameraController.lua	2
-[23:41:26.261][debug][#0:script/provider/diagnostic.lua:346]: 全文诊断耗时：	0.0001319999999998
-[23:41:38.503][debug][#0:script/provider/diagnostic.lua:228]: publishDiagnostics	file:///Users/alanalo/Documents/kloa/src/client/controllers/CameraController.lua	1
-[23:41:38.608][debug][#0:script/provider/diagnostic.lua:346]: 全文诊断耗时：	0.00014099999999928
-[23:41:46.592][warn] [#0:script/await.lua:167]: Await step takes [0.105] sec.
-[23:41:46.682][debug][#0:script/provider/diagnostic.lua:228]: publishDiagnostics	file:///Users/alanalo/Documents/kloa/src/client/controllers/CameraController.lua	1
-[23:41:46.770][debug][#0:script/provider/diagnostic.lua:346]: 全文诊断耗时：	0.079868
-[23:41:53.683][debug][#0:script/provider/diagnostic.lua:228]: publishDiagnostics	file:///Users/alanalo/Documents/kloa/src/client/controllers/CameraController.lua	1
-[23:41:54.017][debug][#0:script/provider/diagnostic.lua:346]: 全文诊断耗时：	7.9000000000384e-05
-[23:42:01.718][debug][#0:script/provider/diagnostic.lua:228]: publishDiagnostics	file:///Users/alanalo/Documents/kloa/src/client/controllers/CameraController.lua	15
-[23:42:01.771][debug][#0:script/provider/diagnostic.lua:228]: publishDiagnostics	file:///Users/alanalo/Documents/kloa/src/client/controllers/CameraController.lua	27
-[23:42:24.787][debug][#0:script/service/service.lua:136]: 
-========= Medical Examination Report =========
-    --------------- Memory ---------------
-        Total: 57.749 MB
-        # 00 : 50.740 MB
-        # 01 : 1.699 MB
-        # 02 : 1.807 MB
-        # 03 : 1.805 MB
-        # 04 : 1.699 MB
-    --------------- Coroutine ---------------
-        Total:     20
-        Running:   0
-        Suspended: 0
-        Normal:    0
-        Dead:      20
-    --------------- Cache ---------------
-        Total: 2
-        Dead:  1
-    --------------- Proto ---------------
-        Holdon:   0
-        Waiting:  0
-==============================================
-[23:43:00.733][debug][#0:script/provider/diagnostic.lua:228]: publishDiagnostics	file:///Users/alanalo/Documents/kloa/src/client/controllers/CameraController.lua	11
-[23:43:01.002][debug][#0:script/provider/diagnostic.lua:228]: publishDiagnostics	file:///Users/alanalo/Documents/kloa/src/client/controllers/CameraController.lua	12
-[23:43:01.003][debug][#0:script/provider/diagnostic.lua:346]: 全文诊断耗时：	0.0001319999999998
-[23:43:25.040][debug][#0:script/service/service.lua:136]: 
-========= Medical Examination Report =========
-    --------------- Memory ---------------
-        Total: 59.367 MB
-        # 00 : 52.358 MB
-        # 01 : 1.699 MB
-        # 02 : 1.807 MB
-        # 03 : 1.805 MB
-        # 04 : 1.699 MB
-    --------------- Coroutine ---------------
-        Total:     17
-        Running:   0
-        Suspended: 0
-        Normal:    0
-        Dead:      17
-    --------------- Cache ---------------
-        Total: 2
-        Dead:  1
-    --------------- Proto ---------------
-        Holdon:   0
-        Waiting:  0
-==============================================
-[23:44:24.273][debug][#0:script/service/service.lua:136]: 
-========= Medical Examination Report =========
-    --------------- Memory ---------------
-        Total: 59.697 MB
-        # 00 : 52.688 MB
-        # 01 : 1.699 MB
-        # 02 : 1.807 MB
-        # 03 : 1.805 MB
-        # 04 : 1.699 MB
-    --------------- Coroutine ---------------
-        Total:     17
-        Running:   0
-        Suspended: 0
-        Normal:    0
-        Dead:      17
-    --------------- Cache ---------------
-        Total: 2
-        Dead:  1
-    --------------- Proto ---------------
-        Holdon:   0
-        Waiting:  0
-==============================================
-[23:44:51.755][debug][#0:script/provider/diagnostic.lua:142]: clearDiagnostics	file:///Users/alanalo/Documents/kloa/src/server/ObstacleService.lua
-[23:44:51.755][debug][#0:script/provider/diagnostic.lua:142]: clearDiagnostics	file:///Users/alanalo/Documents/kloa/src/server/services/PlayerService.server.lua
-[23:44:51.755][debug][#0:script/provider/diagnostic.lua:142]: clearDiagnostics	file:///Users/alanalo/Documents/kloa/src/server/RemoteEventsService.lua
-[23:44:51.755][debug][#0:script/provider/diagnostic.lua:142]: clearDiagnostics	file:///Users/alanalo/Documents/kloa/src/server/GameLoopManager.lua
-[23:44:51.755][debug][#0:script/provider/diagnostic.lua:142]: clearDiagnostics	file:///Users/alanalo/Documents/kloa/src/client/modules/AudioController.lua
-[23:44:51.756][debug][#0:script/provider/diagnostic.lua:142]: clearDiagnostics	file:///Users/alanalo/Documents/kloa/src/shared/SegmentSpawner.lua
-[23:44:51.756][debug][#0:script/provider/diagnostic.lua:142]: clearDiagnostics	file:///Users/alanalo/Documents/kloa/src/server/GameCoordinator.lua
-[23:44:51.756][debug][#0:script/provider/diagnostic.lua:142]: clearDiagnostics	file:///Users/alanalo/Documents/kloa/src/client/controllers/PlayerController.client.lua
-[23:44:51.756][debug][#0:script/provider/diagnostic.lua:142]: clearDiagnostics	file:///Users/alanalo/Documents/kloa/src/shared/SubwaySurfersGameplay.lua
-[23:44:51.756][debug][#0:script/provider/diagnostic.lua:142]: clearDiagnostics	file:///Users/alanalo/Documents/kloa/src/server/ServiceInitializer.server.lua
-[23:44:51.756][debug][#0:script/provider/diagnostic.lua:142]: clearDiagnostics	file:///Users/alanalo/Documents/kloa/src/client/EnhancedPlayerController.client.lua
-[23:44:51.756][debug][#0:script/provider/diagnostic.lua:142]: clearDiagnostics	file:///Users/alanalo/Documents/kloa/src/client/modules/EffectsController.lua
-[23:44:51.756][debug][#0:script/provider/diagnostic.lua:142]: clearDiagnostics	file:///Users/alanalo/Documents/kloa/src/server/PlayerDataService.lua
-[23:44:51.756][debug][#0:script/provider/diagnostic.lua:142]: clearDiagnostics	file:///Users/alanalo/Documents/kloa/src/client/modules/InputHandler.lua
-[23:44:51.756][debug][#0:script/provider/diagnostic.lua:142]: clearDiagnostics	file:///Users/alanalo/Documents/kloa/src/shared/GameConfig.lua
-[23:44:51.756][debug][#0:script/provider/diagnostic.lua:142]: clearDiagnostics	file:///Users/alanalo/Documents/kloa/src/client/controllers/EnhancedPlayerController.client.lua
-[23:44:51.756][debug][#0:script/provider/diagnostic.lua:142]: clearDiagnostics	file:///Users/alanalo/Documents/kloa/src/shared/ObjectPool.lua
-[23:44:51.756][debug][#0:script/provider/diagnostic.lua:142]: clearDiagnostics	file:///Users/alanalo/Documents/kloa/src/client/controllers/CameraController.lua
-[23:44:51.756][debug][#0:script/provider/diagnostic.lua:142]: clearDiagnostics	file:///Users/alanalo/Documents/kloa/src/server/WorldBuilder.lua
-[23:44:51.756][debug][#0:script/provider/diagnostic.lua:142]: clearDiagnostics	file:///Users/alanalo/Documents/kloa/src/client/ui/UIController.lua
-[23:44:51.756][debug][#0:script/provider/diagnostic.lua:142]: clearDiagnostics	file:///Users/alanalo/Documents/kloa/src/server/ScoreService.lua
-[23:44:51.756][debug][#0:script/provider/diagnostic.lua:142]: clearDiagnostics	file:///Users/alanalo/Documents/kloa/UpdatedService.module.lua
-[23:44:51.756][debug][#0:script/provider/diagnostic.lua:142]: clearDiagnostics	file:///Users/alanalo/Documents/kloa/src/server/SubwaySurfersLauncher.server.lua
-[23:44:51.756][debug][#0:script/provider/diagnostic.lua:142]: clearDiagnostics	file:///Users/alanalo/Documents/kloa/src/shared/GameState.lua
-[23:44:51.756][debug][#0:script/provider/diagnostic.lua:142]: clearDiagnostics	file:///Users/alanalo/Documents/kloa/src/server/PowerUpService.lua
-[23:44:51.756][debug][#0:script/provider/diagnostic.lua:142]: clearDiagnostics	file:///Users/alanalo/Documents/kloa/src/server/DynamicWorldGenerator.lua
-[23:44:52.381][debug][#0:script/proto/proto.lua:131]: Method [$/status/click] takes [0.588]sec.
-[23:44:52.382][info] [#0:script/workspace/workspace.lua:302]: Preload start.
-[23:44:52.382][info] [#0:script/workspace/workspace.lua:82]: Ignore directory:	1
-[23:44:52.382][info] [#0:script/workspace/workspace.lua:82]: Ignore directory:	2
-[23:44:52.388][info] [#0:script/workspace/workspace.lua:82]: Ignore directory:	1
-[23:44:52.388][info] [#0:script/workspace/workspace.lua:82]: Ignore directory:	2
-[23:44:52.388][info] [#0:script/workspace/workspace.lua:82]: Ignore directory:	1
-[23:44:52.388][info] [#0:script/workspace/workspace.lua:82]: Ignore directory:	2
-[23:44:52.388][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	*.rbxl
-[23:44:52.388][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	*.rbxlx
-[23:44:52.388][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	*.rbxm
-[23:44:52.388][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	build/
-[23:44:52.388][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	.vscode/roblox-lsp.log
-[23:44:52.388][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	node_modules/
-[23:44:52.388][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	npm-debug.log*
-[23:44:52.389][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	.DS_Store
-[23:44:52.389][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	Thumbs.db
-[23:44:52.389][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	Packages/
-[23:44:52.389][info] [#0:script/workspace/workspace.lua:82]: Ignore directory:	1
-[23:44:52.389][info] [#0:script/workspace/workspace.lua:82]: Ignore directory:	2
-[23:44:52.389][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	*.rbxl
-[23:44:52.389][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	*.rbxlx
-[23:44:52.389][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	*.rbxm
-[23:44:52.389][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	build/
-[23:44:52.389][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	.vscode/roblox-lsp.log
-[23:44:52.389][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	node_modules/
-[23:44:52.389][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	npm-debug.log*
-[23:44:52.389][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	.DS_Store
-[23:44:52.389][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	Thumbs.db
-[23:44:52.389][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	Packages/
-[23:44:52.389][info] [#0:script/workspace/workspace.lua:312]: Scan files at:	/Users/alanalo/Documents/kloa
-[23:44:52.390][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	*.rbxl
-[23:44:52.390][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	*.rbxlx
-[23:44:52.390][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	*.rbxm
-[23:44:52.390][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	build/
-[23:44:52.390][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	.vscode/roblox-lsp.log
-[23:44:52.390][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	node_modules/
-[23:44:52.390][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	npm-debug.log*
-[23:44:52.390][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	.DS_Store
-[23:44:52.390][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	Thumbs.db
-[23:44:52.390][info] [#0:script/workspace/workspace.lua:110]: Ignore by .gitignore:	Packages/
-[23:44:52.390][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/client/controllers/PlayerController.client.lua , size = 18.168 KB
-[23:44:52.391][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/client/controllers/CameraController.lua , size = 8.974 KB
-[23:44:52.391][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/client/controllers/EnhancedPlayerController.client.lua , size = 12.687 KB
-[23:44:52.391][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/client/modules/AudioController.lua , size = 8.370 KB
-[23:44:52.391][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/client/modules/InputHandler.lua , size = 5.843 KB
-[23:44:52.391][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/client/modules/EffectsController.lua , size = 9.488 KB
-[23:44:52.391][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/client/EnhancedPlayerController.client.lua , size = 0.723 KB
-[23:44:52.392][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/client/ui/UIController.lua , size = 16.159 KB
-[23:44:52.392][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/shared/SegmentSpawner.lua , size = 17.963 KB
-[23:44:52.392][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/shared/ObjectPool.lua , size = 3.921 KB
-[23:44:52.392][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/shared/GameConfig.lua , size = 2.488 KB
-[23:44:52.392][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/shared/SubwaySurfersGameplay.lua , size = 7.125 KB
-[23:44:52.392][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/shared/GameState.lua , size = 2.403 KB
-[23:44:52.392][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/server/services/PlayerService.server.lua , size = 0.634 KB
-[23:44:52.392][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/server/GameLoopManager.lua , size = 19.892 KB
-[23:44:52.392][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/server/DynamicWorldGenerator.lua , size = 14.992 KB
-[23:44:52.393][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/server/ObstacleService.lua , size = 14.255 KB
-[23:44:52.393][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/server/GameCoordinator.lua , size = 6.837 KB
-[23:44:52.393][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/server/ScoreService.lua , size = 6.325 KB
-[23:44:52.393][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/server/WorldBuilder.lua , size = 9.545 KB
-[23:44:52.393][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/server/ServiceInitializer.server.lua , size = 3.731 KB
-[23:44:52.393][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/server/PowerUpService.lua , size = 13.304 KB
-[23:44:52.393][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/server/RemoteEventsService.lua , size = 2.090 KB
-[23:44:52.393][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/server/PlayerDataService.lua , size = 2.593 KB
-[23:44:52.393][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/src/server/SubwaySurfersLauncher.server.lua , size = 0.850 KB
-[23:44:52.395][info] [#0:script/workspace/workspace.lua:233]: Preload file at: file:///Users/alanalo/Documents/kloa/UpdatedService.module.lua , size = 0.000 KB
-[23:44:52.397][info] [#0:script/workspace/workspace.lua:315]: Found 26 files.
-[23:44:52.397][info] [#0:script/workspace/workspace.lua:317]: Loaded 26/26 files
-[23:44:52.398][info] [#0:script/workspace/workspace.lua:326]: Preload finish.
-[23:44:52.996][debug][#0:script/provider/diagnostic.lua:228]: publishDiagnostics	file:///Users/alanalo/Documents/kloa/src/client/controllers/CameraController.lua	12
-[23:44:53.122][debug][#0:script/provider/diagnostic.lua:228]: publishDiagnostics	file:///Users/alanalo/Documents/kloa/src/client/EnhancedPlayerController.client.lua	1
-[23:44:53.362][debug][#0:script/provider/diagnostic.lua:386]: 全文诊断耗时：	0.928576
-[23:45:24.514][debug][#0:script/service/service.lua:136]: 
-========= Medical Examination Report =========
-    --------------- Memory ---------------
-        Total: 57.811 MB
-        # 00 : 50.582 MB
-        # 01 : 1.699 MB
-        # 02 : 1.940 MB
-        # 03 : 1.892 MB
-        # 04 : 1.699 MB
-    --------------- Coroutine ---------------
-        Total:     179
-        Running:   0
-        Suspended: 0
-        Normal:    0
-        Dead:      179
-    --------------- Cache ---------------
-        Total: 2
-        Dead:  1
-    --------------- Proto ---------------
-        Holdon:   0
-        Waiting:  0
-==============================================
-[23:46:24.740][debug][#0:script/service/service.lua:136]: 
-========= Medical Examination Report =========
-    --------------- Memory ---------------
-        Total: 58.139 MB
-        # 00 : 50.910 MB
-        # 01 : 1.699 MB
-        # 02 : 1.940 MB
-        # 03 : 1.892 MB
-        # 04 : 1.699 MB
-    --------------- Coroutine ---------------
-        Total:     179
-        Running:   0
-        Suspended: 0
-        Normal:    0
-        Dead:      179
-    --------------- Cache ---------------
-        Total: 2
-        Dead:  1
-    --------------- Proto ---------------
-        Holdon:   0
-        Waiting:  0
-==============================================
-[23:47:24.982][debug][#0:script/service/service.lua:136]: 
-========= Medical Examination Report =========
-    --------------- Memory ---------------
-        Total: 54.268 MB
-        # 00 : 47.039 MB
-        # 01 : 1.699 MB
-        # 02 : 1.940 MB
-        # 03 : 1.892 MB
-        # 04 : 1.699 MB
-    --------------- Coroutine ---------------
-        Total:     1
-        Running:   0
-        Suspended: 0
-        Normal:    0
-        Dead:      1
-    --------------- Cache ---------------
-        Total: 2
-        Dead:  1
-    --------------- Proto ---------------
-        Holdon:   0
-        Waiting:  0
-==============================================
-[23:48:24.243][debug][#0:script/service/service.lua:136]: 
-========= Medical Examination Report =========
-    --------------- Memory ---------------
-        Total: 54.596 MB
-        # 00 : 47.367 MB
-        # 01 : 1.699 MB
-        # 02 : 1.940 MB
-        # 03 : 1.892 MB
-        # 04 : 1.699 MB
-    --------------- Coroutine ---------------
-        Total:     1
-        Running:   0
-        Suspended: 0
-        Normal:    0
-        Dead:      1
-    --------------- Cache ---------------
-        Total: 2
-        Dead:  1
-    --------------- Proto ---------------
-        Holdon:   0
-        Waiting:  0
-==============================================
-[23:49:24.455][debug][#0:script/service/service.lua:136]: 
-========= Medical Examination Report =========
-    --------------- Memory ---------------
-        Total: 54.925 MB
-        # 00 : 47.696 MB
-        # 01 : 1.699 MB
-        # 02 : 1.940 MB
-        # 03 : 1.892 MB
-        # 04 : 1.699 MB
-    --------------- Coroutine ---------------
-        Total:     1
-        Running:   0
-        Suspended: 0
-        Normal:    0
-        Dead:      1
-    --------------- Cache ---------------
-        Total: 2
-        Dead:  1
-    --------------- Proto ---------------
-        Holdon:   0
-        Waiting:  0
-==============================================
-[23:50:24.689][debug][#0:script/service/service.lua:136]: 
-========= Medical Examination Report =========
-    --------------- Memory ---------------
-        Total: 42.528 MB
-        # 00 : 35.299 MB
-        # 01 : 1.699 MB
-        # 02 : 1.940 MB
-        # 03 : 1.892 MB
-        # 04 : 1.699 MB
-    --------------- Coroutine ---------------
-        Total:     0
-        Running:   0
-        Suspended: 0
-        Normal:    0
-        Dead:      0
-    --------------- Cache ---------------
-        Total: 1
-        Dead:  0
-    --------------- Proto ---------------
-        Holdon:   0
-        Waiting:  0
-==============================================
-[23:51:24.910][debug][#0:script/service/service.lua:136]: 
-========= Medical Examination Report =========
-    --------------- Memory ---------------
-        Total: 42.858 MB
-        # 00 : 35.628 MB
-        # 01 : 1.699 MB
-        # 02 : 1.940 MB
-        # 03 : 1.892 MB
-        # 04 : 1.699 MB
-    --------------- Coroutine ---------------
-        Total:     0
-        Running:   0
-        Suspended: 0
-        Normal:    0
-        Dead:      0
-    --------------- Cache ---------------
-        Total: 1
-        Dead:  0
-    --------------- Proto ---------------
-        Holdon:   0
-        Waiting:  0
-==============================================
-[23:52:25.190][debug][#0:script/service/service.lua:136]: 
-========= Medical Examination Report =========
-    --------------- Memory ---------------
-        Total: 43.184 MB
-        # 00 : 35.955 MB
-        # 01 : 1.699 MB
-        # 02 : 1.940 MB
-        # 03 : 1.892 MB
-        # 04 : 1.699 MB
-    --------------- Coroutine ---------------
-        Total:     0
-        Running:   0
-        Suspended: 0
-        Normal:    0
-        Dead:      0
-    --------------- Cache ---------------
-        Total: 1
-        Dead:  0
-    --------------- Proto ---------------
-        Holdon:   0
-        Waiting:  0
-==============================================
-[23:53:24.414][debug][#0:script/service/service.lua:136]: 
-========= Medical Examination Report =========
-    --------------- Memory ---------------
-        Total: 43.511 MB
-        # 00 : 36.282 MB
-        # 01 : 1.699 MB
-        # 02 : 1.940 MB
-        # 03 : 1.892 MB
-        # 04 : 1.699 MB
-    --------------- Coroutine ---------------
-        Total:     0
-        Running:   0
-        Suspended: 0
-        Normal:    0
-        Dead:      0
-    --------------- Cache ---------------
-        Total: 1
-        Dead:  0
-    --------------- Proto ---------------
-        Holdon:   0
-        Waiting:  0
-==============================================
-[23:54:24.671][debug][#0:script/service/service.lua:136]: 
-========= Medical Examination Report =========
-    --------------- Memory ---------------
-        Total: 43.840 MB
-        # 00 : 36.611 MB
-        # 01 : 1.699 MB
-        # 02 : 1.940 MB
-        # 03 : 1.892 MB
-        # 04 : 1.699 MB
-    --------------- Coroutine ---------------
-        Total:     0
-        Running:   0
-        Suspended: 0
-        Normal:    0
-        Dead:      0
-    --------------- Cache ---------------
-        Total: 1
-        Dead:  0
-    --------------- Proto ---------------
-        Holdon:   0
-        Waiting:  0
-==============================================
-[23:54:48.181][error][#0:script/config.lua:265]: script/config.lua:265: bad argument #1 to 'for iterator' (table expected, got boolean)
+[00:06:50.992][debug][#0:script/proto/proto.lua:131]: Method [workspace/didChangeConfiguration] takes [0.947]sec.
+[00:06:51.130][debug][#0:script/provider/diagnostic.lua:228]: publishDiagnostics	file:///Users/alanalo/Documents/kloa/src/client/EnhancedPlayerController.client.lua	1
+[00:06:51.522][debug][#0:script/provider/diagnostic.lua:386]: 全文诊断耗时：	1.378244
+[00:07:02.316][error][#0:script/config.lua:265]: script/config.lua:265: bad argument #1 to 'for iterator' (table expected, got boolean)
 stack traceback:
 	script/config.lua:265: in function <script/config.lua:263>
 	[C]: in function 'xpcall'
@@ -1105,266 +619,3 @@ stack traceback:
 	script/provider/provider.lua:199: in function <script/provider/provider.lua:198>
 	[C]: in function 'xpcall'
 	script/proto/proto.lua:143: in function <script/proto/proto.lua:122>
-[23:54:59.521][error][#0:script/config.lua:265]: script/config.lua:265: bad argument #1 to 'for iterator' (table expected, got boolean)
-stack traceback:
-	script/config.lua:265: in function <script/config.lua:263>
-	[C]: in function 'xpcall'
-	script/config.lua:263: in function 'config.setConfig'
-	script/provider/provider.lua:66: in upvalue 'updateConfig'
-	script/provider/provider.lua:199: in function <script/provider/provider.lua:198>
-	[C]: in function 'xpcall'
-	script/proto/proto.lua:143: in function <script/proto/proto.lua:122>
-[23:55:13.691][error][#0:script/config.lua:265]: script/config.lua:265: bad argument #1 to 'for iterator' (table expected, got boolean)
-stack traceback:
-	script/config.lua:265: in function <script/config.lua:263>
-	[C]: in function 'xpcall'
-	script/config.lua:263: in function 'config.setConfig'
-	script/provider/provider.lua:66: in upvalue 'updateConfig'
-	script/provider/provider.lua:199: in function <script/provider/provider.lua:198>
-	[C]: in function 'xpcall'
-	script/proto/proto.lua:143: in function <script/proto/proto.lua:122>
-[23:55:21.833][error][#0:script/config.lua:265]: script/config.lua:265: bad argument #1 to 'for iterator' (table expected, got boolean)
-stack traceback:
-	script/config.lua:265: in function <script/config.lua:263>
-	[C]: in function 'xpcall'
-	script/config.lua:263: in function 'config.setConfig'
-	script/provider/provider.lua:66: in upvalue 'updateConfig'
-	script/provider/provider.lua:199: in function <script/provider/provider.lua:198>
-	[C]: in function 'xpcall'
-	script/proto/proto.lua:143: in function <script/proto/proto.lua:122>
-[23:55:24.920][debug][#0:script/service/service.lua:136]: 
-========= Medical Examination Report =========
-    --------------- Memory ---------------
-        Total: 44.298 MB
-        # 00 : 37.069 MB
-        # 01 : 1.699 MB
-        # 02 : 1.940 MB
-        # 03 : 1.892 MB
-        # 04 : 1.699 MB
-    --------------- Coroutine ---------------
-        Total:     16
-        Running:   0
-        Suspended: 0
-        Normal:    0
-        Dead:      16
-    --------------- Cache ---------------
-        Total: 1
-        Dead:  0
-    --------------- Proto ---------------
-        Holdon:   0
-        Waiting:  0
-==============================================
-[23:55:27.531][error][#0:script/config.lua:265]: script/config.lua:265: bad argument #1 to 'for iterator' (table expected, got boolean)
-stack traceback:
-	script/config.lua:265: in function <script/config.lua:263>
-	[C]: in function 'xpcall'
-	script/config.lua:263: in function 'config.setConfig'
-	script/provider/provider.lua:66: in upvalue 'updateConfig'
-	script/provider/provider.lua:199: in function <script/provider/provider.lua:198>
-	[C]: in function 'xpcall'
-	script/proto/proto.lua:143: in function <script/proto/proto.lua:122>
-[23:56:21.606][error][#0:script/config.lua:265]: script/config.lua:265: bad argument #1 to 'for iterator' (table expected, got boolean)
-stack traceback:
-	script/config.lua:265: in function <script/config.lua:263>
-	[C]: in function 'xpcall'
-	script/config.lua:263: in function 'config.setConfig'
-	script/provider/provider.lua:66: in upvalue 'updateConfig'
-	script/provider/provider.lua:199: in function <script/provider/provider.lua:198>
-	[C]: in function 'xpcall'
-	script/proto/proto.lua:143: in function <script/proto/proto.lua:122>
-[23:56:25.195][debug][#0:script/service/service.lua:136]: 
-========= Medical Examination Report =========
-    --------------- Memory ---------------
-        Total: 44.690 MB
-        # 00 : 37.461 MB
-        # 01 : 1.699 MB
-        # 02 : 1.940 MB
-        # 03 : 1.892 MB
-        # 04 : 1.699 MB
-    --------------- Coroutine ---------------
-        Total:     24
-        Running:   0
-        Suspended: 0
-        Normal:    0
-        Dead:      24
-    --------------- Cache ---------------
-        Total: 1
-        Dead:  0
-    --------------- Proto ---------------
-        Holdon:   0
-        Waiting:  0
-==============================================
-[23:57:24.440][debug][#0:script/service/service.lua:136]: 
-========= Medical Examination Report =========
-    --------------- Memory ---------------
-        Total: 45.019 MB
-        # 00 : 37.790 MB
-        # 01 : 1.699 MB
-        # 02 : 1.940 MB
-        # 03 : 1.892 MB
-        # 04 : 1.699 MB
-    --------------- Coroutine ---------------
-        Total:     24
-        Running:   0
-        Suspended: 0
-        Normal:    0
-        Dead:      24
-    --------------- Cache ---------------
-        Total: 1
-        Dead:  0
-    --------------- Proto ---------------
-        Holdon:   0
-        Waiting:  0
-==============================================
-[23:58:24.678][debug][#0:script/service/service.lua:136]: 
-========= Medical Examination Report =========
-    --------------- Memory ---------------
-        Total: 45.346 MB
-        # 00 : 38.117 MB
-        # 01 : 1.699 MB
-        # 02 : 1.940 MB
-        # 03 : 1.892 MB
-        # 04 : 1.699 MB
-    --------------- Coroutine ---------------
-        Total:     24
-        Running:   0
-        Suspended: 0
-        Normal:    0
-        Dead:      24
-    --------------- Cache ---------------
-        Total: 1
-        Dead:  0
-    --------------- Proto ---------------
-        Holdon:   0
-        Waiting:  0
-==============================================
-[23:59:24.910][debug][#0:script/service/service.lua:136]: 
-========= Medical Examination Report =========
-    --------------- Memory ---------------
-        Total: 45.673 MB
-        # 00 : 38.444 MB
-        # 01 : 1.699 MB
-        # 02 : 1.940 MB
-        # 03 : 1.892 MB
-        # 04 : 1.699 MB
-    --------------- Coroutine ---------------
-        Total:     24
-        Running:   0
-        Suspended: 0
-        Normal:    0
-        Dead:      24
-    --------------- Cache ---------------
-        Total: 1
-        Dead:  0
-    --------------- Proto ---------------
-        Holdon:   0
-        Waiting:  0
-==============================================
-[00:00:25.155][debug][#0:script/service/service.lua:136]: 
-========= Medical Examination Report =========
-    --------------- Memory ---------------
-        Total: 46.001 MB
-        # 00 : 38.772 MB
-        # 01 : 1.699 MB
-        # 02 : 1.940 MB
-        # 03 : 1.892 MB
-        # 04 : 1.699 MB
-    --------------- Coroutine ---------------
-        Total:     24
-        Running:   0
-        Suspended: 0
-        Normal:    0
-        Dead:      24
-    --------------- Cache ---------------
-        Total: 1
-        Dead:  0
-    --------------- Proto ---------------
-        Holdon:   0
-        Waiting:  0
-==============================================
-[00:00:35.052][error][#0:script/config.lua:265]: script/config.lua:265: bad argument #1 to 'for iterator' (table expected, got boolean)
-stack traceback:
-	script/config.lua:265: in function <script/config.lua:263>
-	[C]: in function 'xpcall'
-	script/config.lua:263: in function 'config.setConfig'
-	script/provider/provider.lua:66: in upvalue 'updateConfig'
-	script/provider/provider.lua:199: in function <script/provider/provider.lua:198>
-	[C]: in function 'xpcall'
-	script/proto/proto.lua:143: in function <script/proto/proto.lua:122>
-[00:00:39.271][error][#0:script/config.lua:265]: script/config.lua:265: bad argument #1 to 'for iterator' (table expected, got boolean)
-stack traceback:
-	script/config.lua:265: in function <script/config.lua:263>
-	[C]: in function 'xpcall'
-	script/config.lua:263: in function 'config.setConfig'
-	script/provider/provider.lua:66: in upvalue 'updateConfig'
-	script/provider/provider.lua:199: in function <script/provider/provider.lua:198>
-	[C]: in function 'xpcall'
-	script/proto/proto.lua:143: in function <script/proto/proto.lua:122>
-[00:01:24.367][debug][#0:script/service/service.lua:136]: 
-========= Medical Examination Report =========
-    --------------- Memory ---------------
-        Total: 46.393 MB
-        # 00 : 39.164 MB
-        # 01 : 1.699 MB
-        # 02 : 1.940 MB
-        # 03 : 1.892 MB
-        # 04 : 1.699 MB
-    --------------- Coroutine ---------------
-        Total:     32
-        Running:   0
-        Suspended: 0
-        Normal:    0
-        Dead:      32
-    --------------- Cache ---------------
-        Total: 1
-        Dead:  0
-    --------------- Proto ---------------
-        Holdon:   0
-        Waiting:  0
-==============================================
-[00:02:24.585][debug][#0:script/service/service.lua:136]: 
-========= Medical Examination Report =========
-    --------------- Memory ---------------
-        Total: 46.720 MB
-        # 00 : 39.491 MB
-        # 01 : 1.699 MB
-        # 02 : 1.940 MB
-        # 03 : 1.892 MB
-        # 04 : 1.699 MB
-    --------------- Coroutine ---------------
-        Total:     32
-        Running:   0
-        Suspended: 0
-        Normal:    0
-        Dead:      32
-    --------------- Cache ---------------
-        Total: 1
-        Dead:  0
-    --------------- Proto ---------------
-        Holdon:   0
-        Waiting:  0
-==============================================
-[00:03:24.855][debug][#0:script/service/service.lua:136]: 
-========= Medical Examination Report =========
-    --------------- Memory ---------------
-        Total: 47.049 MB
-        # 00 : 39.820 MB
-        # 01 : 1.699 MB
-        # 02 : 1.940 MB
-        # 03 : 1.892 MB
-        # 04 : 1.699 MB
-    --------------- Coroutine ---------------
-        Total:     32
-        Running:   0
-        Suspended: 0
-        Normal:    0
-        Dead:      32
-    --------------- Cache ---------------
-        Total: 1
-        Dead:  0
-    --------------- Proto ---------------
-        Holdon:   0
-        Waiting:  0
-==============================================
-[00:03:42.476][info] [#0:script/provider/provider.lua:194]: Server shutdown.
-[00:03:42.484][info] [#0:script/provider/provider.lua:189]: Server exited.
