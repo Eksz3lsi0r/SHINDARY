@@ -299,9 +299,14 @@ function ObstacleService:CreateCollectible(collectibleType, collectibleData, x, 
 
     -- Add collection detection
     local function onTouched(hit)
-        local humanoid = hit.Parent:FindFirstChild("Humanoid")
+        local parent = hit.Parent
+        if not parent then
+            return
+        end
+
+        local humanoid = parent:FindFirstChild("Humanoid")
         if humanoid then
-            self:HandleCollectibleCollection(collectible, collectibleType, humanoid.Parent)
+            self:HandleCollectibleCollection(collectible, collectibleType, parent)
         end
     end
     collectible.Touched:Connect(onTouched)

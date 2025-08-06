@@ -4,7 +4,27 @@ local RunService = game:GetService("RunService")
 local TweenService = game:GetService("TweenService")
 local workspace = game:GetService("Workspace")
 
-local CameraController = {}
+-- Typ-Definition für CameraController
+export type CameraController = {
+    Camera: Camera,
+    Player: Player?,
+    RootPart: BasePart?,
+    CameraConnection: RBXScriptConnection?,
+    OriginalCFrame: CFrame?,
+    IsGameCameraActive: boolean,
+    Initialize: (self: CameraController, player: Player, rootPart: BasePart) -> (),
+    StartGameCamera: (self: CameraController) -> (),
+    StopGameCamera: (self: CameraController) -> (),
+    UpdateGameCamera: (self: CameraController) -> (),
+    ReturnToMenu: (self: CameraController) -> (),
+    ShakeCamera: (self: CameraController, intensity: number?) -> (),
+    ApplyLaneTilt: (self: CameraController, direction: number) -> (),
+    ApplySpeedEffect: (self: CameraController, isActive: boolean) -> (),
+    SetFieldOfView: (self: CameraController, fov: number, duration: number?) -> Tween,
+    Cleanup: (self: CameraController) -> (),
+}
+
+local CameraController = {} :: CameraController
 CameraController.Camera = workspace.CurrentCamera
 CameraController.Player = nil
 CameraController.RootPart = nil
@@ -90,83 +110,6 @@ function CameraController:UpdateGameCamera()
     -- Smooth camera movement
     self.Camera.CFrame = self.Camera.CFrame:Lerp(targetCFrame, CAMERA_SMOOTHNESS)
 end
-local CAMERA_OFFSET = Vector3.new(0, 8, -12) -- Behind and above player
-local CAMERA_LOOK_AHEAD = 15 -- Look forward along track
-local CAMERA_SMOOTHNESS = 0.15 -- Smooth following
-
--- Initialize camera controller
-function CameraController:Initialize(player, rootPart)
-    self.Player = player
-    self.RootPart = rootPart
-    self.OriginalCFrame = self.Camera.CFrame
-
-    -- Set camera type to scriptable for full control
-    self.Camera.CameraType = Enum.CameraType.Scriptable
-
-    print("[CameraController] Camera initialized for Subway Surfers")
-end
-
--- Start game camera following
-function CameraController:StartGameCamera()
-    if not self.RootPart then
-        warn("[CameraController] No RootPart available")
-        return
-    end
-
-    self.IsGameCameraActive = true
-
-    -- Disconnect any existing connection
-    if self.CameraConnection then
-        self.CameraConnection:Disconnect()
-    end
-
-    -- Connect camera update to heartbeat for smooth following
-    self.CameraConnection = RunService.Heartbeat:Connect(function()
-        self:UpdateGameCamera()
-    end)
-
-    print("[CameraController] Game camera started - following player")
-
-    -- Set initial camera position
-    self:UpdateGameCamera()
-end
-
--- Stop game camera
-function CameraController:StopGameCamera()
-    self.IsGameCameraActive = false
-
-    if self.CameraConnection then
-        self.CameraConnection:Disconnect()
-    end
-    self.CameraConnection = nil
-
-    -- Return to default camera type
-    self.Camera.CameraType = Enum.CameraType.Custom
-
-    print("[CameraController] Game camera stopped")
-end
-
--- Update camera position during gameplay - CRITICAL for proper orientation
-function CameraController:UpdateGameCamera()
-    if not self.RootPart or not self.IsGameCameraActive then
-        return
-    end
-
-    local rootPosition = self.RootPart.Position
-    local rootLookVector = self.RootPart.CFrame.LookVector
-
-    -- Calculate camera position behind and above player
-    local cameraPosition = rootPosition + CAMERA_OFFSET
-
-    -- Look at position ahead of player along their facing direction
-    local lookAtPosition = rootPosition + (rootLookVector * CAMERA_LOOK_AHEAD)
-
-    -- Create target camera CFrame looking at the player's forward direction
-    local targetCFrame = CFrame.lookAt(cameraPosition, lookAtPosition)
-
-    -- Smooth camera movement
-    self.Camera.CFrame = self.Camera.CFrame:Lerp(targetCFrame, CAMERA_SMOOTHNESS)
-end
 
 -- Return camera to menu position
 function CameraController:ReturnToMenu()
@@ -183,14 +126,14 @@ function CameraController:ReturnToMenu()
 end
 
 -- Shake camera for collision effects
-function CameraController:ShakeCamera(intensity)
+function CameraController:ShakeCamera(intensity: number?)
     if not self.IsGameCameraActive then
         return
     end
 
-    intensity = intensity or 1
-    local shakeAmount = 1.5 * intensity
-    local shakeDuration = 0.3 * intensity
+    local shakeIntensity: number = if intensity then intensity else 1
+    local shakeAmount: number = 1.5 * shakeIntensity
+    local shakeDuration: number = 0.3 * shakeIntensity
 
     -- Create shake effect
     local shakeStart = tick()
@@ -204,10 +147,10 @@ function CameraController:ShakeCamera(intensity)
         end
 
         -- Calculate shake offset with decay
-        local progress = elapsed / shakeDuration
-        local shakeIntensity = (1 - progress) * shakeAmount
+        local progress: number = elapsed / shakeDuration
+        local shakeIntensity: number = (1 - progress) * shakeAmount
 
-        local randomOffset = Vector3.new(
+        local randomOffset: Vector3 = Vector3.new(
             (math.random() - 0.5) * shakeIntensity,
             (math.random() - 0.5) * shakeIntensity,
             0 -- Don't shake forward/backward
@@ -222,7 +165,7 @@ function CameraController:ShakeCamera(intensity)
 end
 
 -- Lane switching camera tilt effect
-function CameraController:ApplyLaneTilt(direction)
+function CameraController:ApplyLaneTilt(direction: number)
     if not self.IsGameCameraActive then
         return
     end
@@ -261,10 +204,10 @@ function CameraController:ApplySpeedEffect(isActive)
 end
 
 -- Set camera field of view
-function CameraController:SetFieldOfView(fov, duration)
-    duration = duration or 0.5
+function CameraController:SetFieldOfView(fov: number, duration: number?): Tween
+    local tweenDuration: number = if duration then duration else 0.5
 
-    local tweenInfo = TweenInfo.new(duration, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+    local tweenInfo = TweenInfo.new(tweenDuration, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
     local tween = TweenService:Create(self.Camera, tweenInfo, { FieldOfView = fov })
     tween:Play()
 

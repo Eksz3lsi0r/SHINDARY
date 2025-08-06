@@ -7,10 +7,10 @@ print("🔧 SERVICE INITIALIZER STARTING WITH AI OPTIMIZATION...")
 -- Enhanced folder structure creation with validation
 local function createFolderStructure()
     local folders = {
-        {name = "RemoteEvents", required = true},
-        {name = "RemoteFunctions", required = true},
-        {name = "Shared", required = true},
-        {name = "Modules", required = false} -- Optional for compatibility
+        { name = "RemoteEvents", required = true },
+        { name = "RemoteFunctions", required = true },
+        { name = "Shared", required = true },
+        { name = "Modules", required = false }, -- Optional for compatibility
     }
 
     local createdCount = 0
@@ -32,9 +32,9 @@ end
 -- Enhanced server signals with performance monitoring
 local function createServerSignals()
     local signals = {
-        {name = "ServerReady", initialValue = false},
-        {name = "GameManagerReady", initialValue = false},
-        {name = "ServicesReady", initialValue = false} -- New enhanced signal
+        { name = "ServerReady", initialValue = false },
+        { name = "GameManagerReady", initialValue = false },
+        { name = "ServicesReady", initialValue = false }, -- New enhanced signal
     }
 
     for _, signalInfo in ipairs(signals) do

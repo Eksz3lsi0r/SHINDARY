@@ -25,7 +25,7 @@ local distanceLabel: TextLabel
 local speedLabel: TextLabel
 local powerUpFrame: Frame
 local pauseButton: TextButton
-local mobileControlsFrame: Frame
+local _mobileControlsFrame: Frame
 
 -- Legacy UI for compatibility
 UIController.MenuUI = nil

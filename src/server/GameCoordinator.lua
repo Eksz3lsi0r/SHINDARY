@@ -3,37 +3,105 @@
 
 local Players = game:GetService("Players")
 local _RunService = game:GetService("RunService")
-
--- Import our new game systems
 local _ServerStorage = game:GetService("ServerStorage")
--- Note: These requires work at runtime but LSP may show errors
-local DynamicWorldGenerator = require(script.Parent:FindFirstChild("DynamicWorldGenerator") :: ModuleScript)
-local GameLoopManager = require(script.Parent:FindFirstChild("GameLoopManager") :: ModuleScript)
+
+-- Demand-Loading für Module um circular dependencies zu vermeiden
+local DynamicWorldGenerator: any = nil
+local GameLoopManager: any = nil
+
+-- Lazy Loading Funktion
+local function getDynamicWorldGenerator(): any?
+    if not DynamicWorldGenerator then
+        local success, module = pcall(function()
+            local moduleScript = script.Parent:FindFirstChild("DynamicWorldGenerator")
+            return if moduleScript then require(moduleScript) else nil
+        end)
+        if success and module then
+            DynamicWorldGenerator = module
+        else
+            warn("[GameCoordinator] DynamicWorldGenerator konnte nicht geladen werden")
+        end
+    end
+    return DynamicWorldGenerator
+end
+
+local function getGameLoopManager(): any?
+    if not GameLoopManager then
+        local success, module = pcall(function()
+            local moduleScript = script.Parent:FindFirstChild("GameLoopManager")
+            return if moduleScript then require(moduleScript) else nil
+        end)
+        if success and module then
+            GameLoopManager = module
+        else
+            warn("[GameCoordinator] GameLoopManager konnte nicht geladen werden")
+        end
+    end
+    return GameLoopManager
+end
+
+-- Type Definitions für bessere Type-Safety
+export type GameSession = {
+    startTime: number,
+    initiatingPlayer: Player,
+}
+
+export type GameCoordinatorStatus = {
+    initialized: boolean,
+    activeSession: boolean,
+    worldGeneratorActive: boolean,
+    gameLoopState: string,
+    playerCount: number,
+}
 
 local GameCoordinator = {}
 GameCoordinator.__index = GameCoordinator
 
-function GameCoordinator.new()
-    local self = setmetatable({}, GameCoordinator)
+export type GameCoordinator = typeof(setmetatable(
+    {} :: {
+        gameLoopManager: any,
+        worldGenerator: any,
+        isInitialized: boolean,
+        activeSession: GameSession?,
+    },
+    GameCoordinator
+))
 
-    -- Initialize components
-    self.gameLoopManager = GameLoopManager.new()
-    self.worldGenerator = DynamicWorldGenerator.new()
+function GameCoordinator.new(): GameCoordinator
+    local self = setmetatable({}, GameCoordinator) :: GameCoordinator
+
+    -- Prüfe ob Module verfügbar sind (lazy loading)
+    local worldGen = getDynamicWorldGenerator()
+    local gameLoop = getGameLoopManager()
+
+    if not worldGen or not gameLoop then
+        warn("🔧 GameCoordinator: Einige Module konnten nicht geladen werden, verwende Fallback")
+        self.gameLoopManager = nil
+        self.worldGenerator = nil
+    else
+        -- Initialize components
+        self.gameLoopManager = gameLoop.new()
+        self.worldGenerator = worldGen.new()
+    end
 
     self.isInitialized = false
     self.activeSession = nil
 
     return self
-end
-
--- Initialize the complete game system
-function GameCoordinator:initialize()
+end -- Initialize the complete game system
+function GameCoordinator:initialize(): boolean
     if self.isInitialized then
         warn("🎮 GameCoordinator already initialized")
-        return
+        return true
     end
 
     print("🎮 Initializing Subway Surfers Game Coordinator...")
+
+    -- Prüfe kritische Abhängigkeiten
+    if not self.gameLoopManager or not self.worldGenerator then
+        warn("❌ GameCoordinator: Kritische Komponenten fehlen")
+        return false
+    end
 
     -- Setup player management
     self:setupPlayerManagement()
@@ -53,6 +121,7 @@ function GameCoordinator:initialize()
 
     self.isInitialized = true
     print("✅ Game Coordinator initialized successfully")
+    return true
 end
 
 -- Setup player connection management
@@ -103,10 +172,14 @@ function GameCoordinator:startGameSession(initiatingPlayer: Player)
         playerPosition = rootPart.Position
     end
 
-    self.worldGenerator:start(playerPosition)
+    if self.worldGenerator and self.worldGenerator.start then
+        self.worldGenerator:start(playerPosition)
+    end
 
     -- Start game loop
-    self.gameLoopManager:startGame(initiatingPlayer)
+    if self.gameLoopManager and self.gameLoopManager.startGame then
+        self.gameLoopManager:startGame(initiatingPlayer)
+    end
 
     -- Set up integration between systems
     self:integrateGameSystems()
@@ -135,13 +208,15 @@ end
 -- Update world based on player position (called from PlayerController)
 function GameCoordinator:updateWorldForPlayer(player: Player, position: Vector3)
     if self.worldGenerator and self.worldGenerator.state and self.worldGenerator.state.isActive then
-        self.worldGenerator:updatePlayerPosition(position)
+        if self.worldGenerator.updatePlayerPosition then
+            self.worldGenerator:updatePlayerPosition(position)
+        end
     end
 end
 
 -- Get world objects near position (for collision detection)
-function GameCoordinator:getWorldObjectsNear(position: Vector3, radius: number)
-    if self.worldGenerator then
+function GameCoordinator:getWorldObjectsNear(position: Vector3, radius: number): { any }
+    if self.worldGenerator and self.worldGenerator.getObjectsNear then
         return self.worldGenerator:getObjectsNear(position, radius)
     end
     return {}
@@ -149,27 +224,37 @@ end
 
 -- Handle object collection (coins, power-ups)
 function GameCoordinator:handleObjectCollection(player: Player, objectType: string, value: any)
+    if not self.gameLoopManager then
+        return
+    end
+
     if objectType == "COIN" then
-        self.gameLoopManager:handleCoinCollected(player, value or 10)
+        if self.gameLoopManager.handleCoinCollected then
+            self.gameLoopManager:handleCoinCollected(player, value or 10)
+        end
     elseif objectType == "POWERUP" then
-        self.gameLoopManager:handlePowerUpCollected(player, value)
+        if self.gameLoopManager.handlePowerUpCollected then
+            self.gameLoopManager:handlePowerUpCollected(player, value)
+        end
     end
 end
 
 -- Handle player collision with obstacle
 function GameCoordinator:handlePlayerCollision(player: Player, obstacleType: string)
-    self.gameLoopManager:handlePlayerCollision(player, obstacleType)
+    if self.gameLoopManager and self.gameLoopManager.handlePlayerCollision then
+        self.gameLoopManager:handlePlayerCollision(player, obstacleType)
+    end
 end
 
 -- Stop current game session
 function GameCoordinator:stopGameSession(reason: string)
     print(`🛑 Stopping game session: {reason}`)
 
-    if self.worldGenerator then
+    if self.worldGenerator and self.worldGenerator.stop then
         self.worldGenerator:stop()
     end
 
-    if self.gameLoopManager then
+    if self.gameLoopManager and self.gameLoopManager.endGame then
         self.gameLoopManager:endGame(reason)
     end
 
@@ -188,13 +273,16 @@ function GameCoordinator:restartGameSession(player: Player)
 end
 
 -- Get system status
-function GameCoordinator:getStatus()
+function GameCoordinator:getStatus(): GameCoordinatorStatus
     return {
         initialized = self.isInitialized,
         activeSession = self.activeSession ~= nil,
         worldGeneratorActive = self.worldGenerator and self.worldGenerator.state and self.worldGenerator.state.isActive
             or false,
-        gameLoopState = self.gameLoopManager and self.gameLoopManager:getGameState() or "UNKNOWN",
+        gameLoopState = self.gameLoopManager
+                and self.gameLoopManager.getGameState
+                and self.gameLoopManager:getGameState()
+            or "UNKNOWN",
         playerCount = #Players:GetPlayers(),
     }
 end
@@ -203,11 +291,11 @@ end
 function GameCoordinator:cleanup()
     print("🧹 Cleaning up Game Coordinator")
 
-    if self.worldGenerator then
+    if self.worldGenerator and self.worldGenerator.stop then
         self.worldGenerator:stop()
     end
 
-    if self.gameLoopManager then
+    if self.gameLoopManager and self.gameLoopManager.cleanup then
         self.gameLoopManager:cleanup()
     end
 

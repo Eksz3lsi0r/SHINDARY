@@ -1,8 +1,8 @@
 --!strict
 -- AudioController.lua - Audio system for Subway Surfers
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local SoundService = game:GetService("SoundService")
 local TweenService = game:GetService("TweenService")
+local _ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local AudioController = {}
 

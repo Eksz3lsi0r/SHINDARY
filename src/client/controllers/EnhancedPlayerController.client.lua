@@ -7,15 +7,25 @@ local RunService = game:GetService("RunService")
 local TweenService = game:GetService("TweenService")
 local UserInputService = game:GetService("UserInputService")
 
--- Warte auf SubwaySurfersGameplay Module
-local SharedFolder = ReplicatedStorage:WaitForChild("Shared")
-local SubwaySurfersGameplay = require(SharedFolder:WaitForChild("SubwaySurfersGameplay"))
+-- Sichere Module-Loading
+local SharedFolder = ReplicatedStorage:WaitForChild("Shared", 10)
+local GameConstants = if SharedFolder then require(SharedFolder:WaitForChild("GameConstants", 5)) else nil
+
+-- Fallback für Game Constants
+local function getLanePosition(lane: number): number
+    if GameConstants and GameConstants.GetLanePosition then
+        return GameConstants.GetLanePosition(lane)
+    else
+        -- Fallback zu eigener Lane-Berechnung
+        return lane * 8 -- Standard lane width
+    end
+end
 
 -- Enhanced PlayerController für echtes Subway Surfers Gameplay
 local EnhancedPlayerController = {}
 EnhancedPlayerController.__index = EnhancedPlayerController
 
--- Typ Definitionen
+-- Vollständige Typ Definitionen mit korrekten optional types
 export type PlayerState = {
     lane: number,
     isJumping: boolean,
@@ -25,7 +35,8 @@ export type PlayerState = {
     isGameActive: boolean,
 }
 
-export type EnhancedPlayerController = {
+-- EnhancedPlayerController Type mit allen Properties
+type EnhancedPlayerControllerImpl = {
     player: Player,
     character: Model?,
     humanoid: Humanoid?,
@@ -34,7 +45,33 @@ export type EnhancedPlayerController = {
     forwardMovementConnection: RBXScriptConnection?,
     inputConnection: RBXScriptConnection?,
     movementTween: Tween?,
+
+    -- Method signatures (self-referential)
+    setupInputHandling: (EnhancedPlayerControllerImpl) -> (),
+    startForwardMovement: (EnhancedPlayerControllerImpl) -> (),
+    moveLeft: (EnhancedPlayerControllerImpl) -> (),
+    moveRight: (EnhancedPlayerControllerImpl) -> (),
+    animateToLane: (EnhancedPlayerControllerImpl) -> (),
+    jump: (EnhancedPlayerControllerImpl) -> (),
+    slide: (EnhancedPlayerControllerImpl) -> (),
+    destroy: (EnhancedPlayerControllerImpl) -> (),
+    pauseGame: (EnhancedPlayerControllerImpl) -> (),
+    resumeGame: (EnhancedPlayerControllerImpl) -> (),
+    resetGame: (EnhancedPlayerControllerImpl) -> (),
+    initialize: (EnhancedPlayerControllerImpl) -> (),
+    onCharacterAdded: (EnhancedPlayerControllerImpl, Model) -> (),
+    sendPlayerAction: (EnhancedPlayerControllerImpl, string, any?) -> (),
+    setupServerEvents: (EnhancedPlayerControllerImpl) -> (),
+    handleGameStateChange: (EnhancedPlayerControllerImpl, string, any?) -> (),
+    getDistance: (EnhancedPlayerControllerImpl) -> number,
+    getSpeed: (EnhancedPlayerControllerImpl) -> number,
+    getLane: (EnhancedPlayerControllerImpl) -> number,
+    isActive: (EnhancedPlayerControllerImpl) -> boolean,
+    setSpeed: (EnhancedPlayerControllerImpl, number) -> (),
+    increaseSpeed: (EnhancedPlayerControllerImpl, number) -> (),
 }
+
+export type EnhancedPlayerController = EnhancedPlayerControllerImpl
 
 -- Game Configuration
 local CONFIG = {
@@ -46,56 +83,56 @@ local CONFIG = {
     LANE_WIDTH = 8, -- Distance between lanes
 }
 
-function EnhancedPlayerController.new(): EnhancedPlayerController
-    local self = setmetatable({}, EnhancedPlayerController) :: EnhancedPlayerController
+function EnhancedPlayerController.new(): any
+    local player = Players.LocalPlayer
+    if not player then
+        error("LocalPlayer not found")
+    end
 
-    -- Player References
-    self.player = Players.LocalPlayer
-    self.character = self.player.Character or self.player.CharacterAdded:Wait()
-    self.humanoid = self.character:WaitForChild("Humanoid") :: Humanoid
-    self.rootPart = self.character:WaitForChild("HumanoidRootPart") :: BasePart
-
-    -- Game State
-    self.state = {
-        lane = 0, -- -1=left, 0=center, 1=right
-        isJumping = false,
-        isSliding = false,
-        speed = CONFIG.FORWARD_SPEED,
-        distance = 0,
-        isGameActive = true,
+    local self = {
+        player = player,
+        character = nil :: Model?,
+        humanoid = nil :: Humanoid?,
+        rootPart = nil :: BasePart?,
+        state = {
+            lane = 0,
+            isJumping = false,
+            isSliding = false,
+            speed = CONFIG.FORWARD_SPEED,
+            distance = 0,
+            isGameActive = true,
+        } :: PlayerState,
+        forwardMovementConnection = nil :: RBXScriptConnection?,
+        inputConnection = nil :: RBXScriptConnection?,
+        movementTween = nil :: Tween?,
     }
+    setmetatable(self, EnhancedPlayerController)
 
-    -- Initialize connections as nil
-    self.forwardMovementConnection = nil
-    self.inputConnection = nil
-    self.movementTween = nil
-
-    -- Setup input handling
-    self:setupInputHandling()
-
-    -- Start forward movement
-    self:startForwardMovement()
-
-    print("🎮 Enhanced PlayerController initialisiert - Subway Surfers bereit!")
+    print("🎮 Enhanced PlayerController created - Subway Surfers ready!")
     return self
 end
 
 -- Bereinigung aller Verbindungen und Tweens
 function EnhancedPlayerController:destroy()
-    -- Stoppe alle aktiven Verbindungen
-    if self.forwardMovementConnection then
-        self.forwardMovementConnection:Disconnect()
+    print("🧹 Bereinigung aller Verbindungen und Tweens")
+
+    -- Stoppe alle aktiven Verbindungen - mit nil-checks
+    local fmc = self.forwardMovementConnection
+    if fmc then
+        fmc:Disconnect()
         self.forwardMovementConnection = nil
     end
 
-    if self.inputConnection then
-        self.inputConnection:Disconnect()
+    local ic = self.inputConnection
+    if ic then
+        ic:Disconnect()
         self.inputConnection = nil
     end
 
-    -- Stoppe alle aktiven Tweens
-    if self.movementTween then
-        self.movementTween:Cancel()
+    -- Stoppe alle aktiven Tweens - mit nil-checks
+    local mt = self.movementTween
+    if mt then
+        mt:Cancel()
         self.movementTween = nil
     end
 end
@@ -129,18 +166,20 @@ function EnhancedPlayerController:startForwardMovement()
         return
     end
 
-    self.forwardMovementConnection = RunService.Heartbeat:Connect(function(deltaTime)
+    self.forwardMovementConnection = RunService.Heartbeat:Connect(function(deltaTime: number)
         if not self.state.isGameActive or not self.rootPart then
             return
         end
 
-        -- Aktualisiere Distanz
-        local moveDistance = self.state.speed * deltaTime
-        self.state.distance += moveDistance
+        -- Type-safe calculations mit expliziten Annotations
+        local speed: number = self.state.speed
+        local currentDistance: number = self.state.distance
+        local moveDistance: number = speed * deltaTime
+        self.state.distance = currentDistance + moveDistance
 
         -- Bewege Character vorwärts (Z-Achse in Roblox)
-        local currentCFrame = self.rootPart.CFrame
-        local newPosition = currentCFrame.Position + Vector3.new(0, 0, moveDistance)
+        local currentCFrame: CFrame = self.rootPart.CFrame
+        local newPosition: Vector3 = currentCFrame.Position + Vector3.new(0, 0, moveDistance)
         self.rootPart.CFrame = CFrame.new(newPosition, newPosition + currentCFrame.LookVector)
     end)
 end
@@ -161,14 +200,14 @@ function EnhancedPlayerController:moveRight()
     end
 end
 
--- Animiere zur Ziel-Lane mit SubwaySurfersGameplay Integration
+-- Animiere zur Ziel-Lane mit GameConstants Integration
 function EnhancedPlayerController:animateToLane()
     if not self.rootPart then
         return
     end
 
-    -- Nutze SubwaySurfersGameplay für konsistente Lane-Positionen
-    local targetX = SubwaySurfersGameplay.GetLanePosition(self.state.lane)
+    -- Nutze getLanePosition für konsistente Lane-Positionen
+    local targetX: number = getLanePosition(self.state.lane)
     local currentCFrame = self.rootPart.CFrame
 
     -- Stoppe vorherige Bewegung
@@ -198,8 +237,8 @@ function EnhancedPlayerController:jump()
     self.state.isJumping = true
 
     -- Erstelle Sprung-Animation
-    local startY = self.rootPart.Position.Y
-    local peakY = startY + CONFIG.JUMP_HEIGHT
+    local startY: number = self.rootPart.Position.Y
+    local peakY: number = startY + CONFIG.JUMP_HEIGHT
 
     -- Aufwärts-Bewegung
     local jumpUpTween = TweenService:Create(
@@ -237,7 +276,7 @@ function EnhancedPlayerController:slide()
     self.state.isSliding = true
 
     -- Verändere Character-Größe für Rutsch-Effekt (verkleinerung der hitbox)
-    local originalSize = self.humanoid.HipHeight
+    local originalSize: number = self.humanoid.HipHeight
     self.humanoid.HipHeight = originalSize * 0.5
 
     -- Nach Slide-Duration zurücksetzen
@@ -255,7 +294,8 @@ function EnhancedPlayerController:setSpeed(newSpeed: number)
 end
 
 function EnhancedPlayerController:increaseSpeed(amount: number)
-    self.state.speed += amount
+    local currentSpeed: number = self.state.speed
+    self.state.speed = currentSpeed + amount
 end
 
 -- Game State Management
@@ -314,7 +354,7 @@ end
 
 -- Server Communication mit verbesserter Fehlerbehandlung
 function EnhancedPlayerController:sendPlayerAction(action: string, data: any?)
-    local success, result = pcall(function()
+    local success = pcall(function()
         local RemoteEvents = ReplicatedStorage:WaitForChild("RemoteEvents", 5)
         if not RemoteEvents then
             warn("⚠️ RemoteEvents nicht gefunden!")
@@ -329,13 +369,13 @@ function EnhancedPlayerController:sendPlayerAction(action: string, data: any?)
     end)
 
     if not success then
-        warn("❌ Fehler bei Server-Kommunikation:", action, result)
+        warn("❌ Fehler bei Server-Kommunikation:", action)
     end
 end
 
 -- Game State Events Integration
 function EnhancedPlayerController:setupServerEvents()
-    local success, result = pcall(function()
+    local success = pcall(function()
         local RemoteEvents = ReplicatedStorage:WaitForChild("RemoteEvents", 10)
         if not RemoteEvents then
             return
@@ -359,7 +399,7 @@ function EnhancedPlayerController:setupServerEvents()
     end)
 
     if not success then
-        warn("❌ Fehler beim Setup der Server-Events:", result)
+        warn("❌ Fehler beim Setup der Server-Events")
     end
 end
 
@@ -388,13 +428,16 @@ end
 -- Initialisiere PlayerController mit Server-Integration
 function EnhancedPlayerController:initialize()
     -- Setup Character Change Detection
-    self.player.CharacterAdded:Connect(function(character)
+    self.player.CharacterAdded:Connect(function(character: Model)
         self:onCharacterAdded(character)
     end)
 
-    -- Handle Character
-    if self.player.Character then
-        self:onCharacterAdded(self.player.Character)
+    -- Handle Character mit nil-safe handling
+    local currentCharacter = self.player.Character
+    if currentCharacter then
+        task.spawn(function()
+            self:onCharacterAdded(currentCharacter)
+        end)
     end
 
     -- Setup Server Events

@@ -2,11 +2,77 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug Roblox Project",
+            "name": "Debug Roblox Subway Surfers - Enhanced",
             "type": "node",
             "request": "launch",
-            "program": "${workspaceFolder}/src/shared/roblox_lua_project.lua",
-            "console": "integratedTerminal"
+            "program": "${workspaceFolder}/src/shared/SubwaySurfersGameplay.lua",
+            "console": "integratedTerminal",
+            "env": {
+                "COPILOT_ENHANCED_CONTEXT": "true",
+                "ROBLOX_PROJECT_TYPE": "subway_surfers_clone",
+                "LUAU_TYPE_CHECKING": "strict",
+                "ROJO_SYNC_PORT": "34872"
+            },
+            "preLaunchTask": "Rojo: Generate Sourcemap",
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "--strict",
+                "--debug"
+            ]
+        },
+        {
+            "name": "Debug Server Services",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/server/ServiceInitializer.server.lua",
+            "console": "integratedTerminal",
+            "env": {
+                "DEBUG_MODE": "true",
+                "SERVICE_LOGGING": "verbose"
+            },
+            "preLaunchTask": "Rojo: Start Server with Sourcemap"
+        },
+        {
+            "name": "Debug Client Controllers",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/client/controllers/EnhancedPlayerController.client.lua",
+            "console": "integratedTerminal",
+            "env": {
+                "CLIENT_DEBUG": "true",
+                "PLAYER_CONTROLLER_LOGGING": "true"
+            }
+        },
+        {
+            "name": "Debug World Generation",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/server/DynamicWorldGenerator.lua",
+            "console": "integratedTerminal",
+            "env": {
+                "WORLD_GEN_DEBUG": "true",
+                "SEGMENT_SPAWNER_DEBUG": "true"
+            }
+        },
+        {
+            "name": "Test GameConfig Integration",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/shared/GameConfig.lua",
+            "console": "integratedTerminal",
+            "env": {
+                "CONFIG_VALIDATION": "true"
+            }
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Debug Full Subway Surfers System",
+            "configurations": [
+                "Debug Server Services",
+                "Debug Client Controllers",
+                "Debug World Generation"
+            ]
         }
     ]
 }

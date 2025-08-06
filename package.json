@@ -16,8 +16,17 @@
     "languages": [
       {
         "id": "luau",
-        "aliases": ["Luau", "luau"],
-        "extensions": [".lua", ".luau", ".server.lua", ".client.lua", ".module.lua"],
+        "aliases": [
+          "Luau",
+          "luau"
+        ],
+        "extensions": [
+          ".lua",
+          ".luau",
+          ".server.lua",
+          ".client.lua",
+          ".module.lua"
+        ],
         "configuration": "./language-configuration.json"
       }
     ],
@@ -79,8 +88,6 @@
     "vscode-languageserver-node": "^9.0.1"
   },
   "activationEvents": [
-    "onLanguage:luau",
-    "onLanguage:lua",
     "workspaceContains:**/default.project.json",
     "workspaceContains:**/*.server.lua",
     "workspaceContains:**/*.client.lua"

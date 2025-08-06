@@ -10,9 +10,15 @@ export type PlayerState = {
     isSliding: boolean,
 }
 
+export type EnhancedPlayerController = {
+    MoveToLane: (self: EnhancedPlayerController, lane: number) -> (),
+    Jump: (self: EnhancedPlayerController) -> (),
+    Slide: (self: EnhancedPlayerController) -> (),
+}
+
 function EnhancedPlayerController.new(): EnhancedPlayerController
     -- Initialisierungscode hier
-    return setmetatable({}, EnhancedPlayerController)
+    return setmetatable({}, { __index = EnhancedPlayerController }) :: any
 end
 
 function EnhancedPlayerController:MoveToLane(lane: number)

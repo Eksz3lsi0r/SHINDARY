@@ -1,7 +1,7 @@
 --!strict
 -- InputHandler.lua - Enhanced input management for Subway Surfers
-local UserInputService = game:GetService("UserInputService")
 local GuiService = game:GetService("GuiService")
+local UserInputService = game:GetService("UserInputService")
 
 local InputHandler = {}
 
@@ -10,7 +10,7 @@ export type InputCallback = (inputType: string, inputValue: any?) -> ()
 export type TouchGesture = "swipeLeft" | "swipeRight" | "swipeUp" | "swipeDown" | "tap"
 
 -- Private variables
-local callbacks: {[string]: InputCallback} = {}
+local callbacks: { [string]: InputCallback } = {}
 local touchStartPosition: Vector2?
 local lastTouchTime = 0
 local SWIPE_THRESHOLD = 50 -- Minimum distance for swipe
@@ -55,7 +55,9 @@ end
 
 -- Handle keyboard input
 local function handleKeyboardInput(input: InputObject, gameProcessed: boolean)
-    if gameProcessed then return end
+    if gameProcessed then
+        return
+    end
 
     local inputType = INPUT_MAPPINGS[input.KeyCode]
     if inputType then
@@ -68,7 +70,7 @@ end
 local function detectTouchGesture(startPos: Vector2, endPos: Vector2, duration: number): TouchGesture?
     local deltaX = endPos.X - startPos.X
     local deltaY = endPos.Y - startPos.Y
-    local distance = math.sqrt(deltaX^2 + deltaY^2)
+    local distance = math.sqrt(deltaX ^ 2 + deltaY ^ 2)
 
     -- Check for tap (short duration, small movement)
     if duration <= TAP_TIME_THRESHOLD and distance < SWIPE_THRESHOLD then
@@ -101,14 +103,15 @@ end
 
 -- Handle touch input
 local function handleTouchInput(touch: InputObject, gameProcessed: boolean)
-    if gameProcessed then return end
+    if gameProcessed then
+        return
+    end
 
     local currentTime = tick()
 
     if touch.UserInputState == Enum.UserInputState.Begin then
         touchStartPosition = Vector2.new(touch.Position.X, touch.Position.Y)
         lastTouchTime = currentTime
-
     elseif touch.UserInputState == Enum.UserInputState.End and touchStartPosition then
         local duration = currentTime - lastTouchTime
         local endPos = Vector2.new(touch.Position.X, touch.Position.Y)
@@ -155,29 +158,30 @@ function InputHandler.Initialize()
 end
 
 -- Get platform-specific controls info
-function InputHandler.GetControlsInfo(): {string}
-    local platform = GuiService:IsTenFootInterface() and "Console" or
-                    UserInputService.TouchEnabled and "Mobile" or "Desktop"
+function InputHandler.GetControlsInfo(): { string }
+    local platform = GuiService:IsTenFootInterface() and "Console"
+        or UserInputService.TouchEnabled and "Mobile"
+        or "Desktop"
 
     if platform == "Mobile" then
         return {
             "Swipe left/right to change lanes",
             "Swipe up to jump",
             "Swipe down to slide",
-            "Tap to jump"
+            "Tap to jump",
         }
     elseif platform == "Console" then
         return {
             "Use D-Pad to move",
             "A to jump",
-            "B to slide"
+            "B to slide",
         }
     else -- Desktop
         return {
             "A/D or Arrow Keys to move",
             "W/Space to jump",
             "S to slide",
-            "R to restart, Esc to pause"
+            "R to restart, Esc to pause",
         }
     end
 end

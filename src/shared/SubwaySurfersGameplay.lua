@@ -264,11 +264,12 @@ function SubwaySurfersGameplay.GetSpeedForDistance(distance)
 end
 
 -- Calculate score multiplier based on current state
-function SubwaySurfersGameplay.CalculateScoreMultiplier(powerUps, distance)
-    local multiplier = 1
+function SubwaySurfersGameplay.CalculateScoreMultiplier(powerUps: any?, distance: any): number
+    local multiplier: number = 1
+    local distanceNum: number = tonumber(distance) or 0
 
     -- Distance bonus
-    multiplier = multiplier + math.floor(distance / 1000) * 0.1
+    multiplier = multiplier + math.floor(distanceNum / 1000) * 0.1
 
     -- Power-up multiplier
     if powerUps and powerUps.MULTIPLIER then

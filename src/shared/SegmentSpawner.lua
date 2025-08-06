@@ -13,17 +13,17 @@ local function loadModuleSafe(path: string, fallback: any?): any?
         return require(ReplicatedStorage:WaitForChild("Shared"):WaitForChild(path))
     end)
 
-    if success then
+    if success and module then
         return module
     else
         warn("[SegmentSpawner] Failed to load module:", path)
-        return fallback
+        return fallback or {}
     end
 end
 
 -- Import shared modules mit safe loading
-local GameConfig = loadModuleSafe("GameConfig")
-local SubwaySurfersGameplay = loadModuleSafe("SubwaySurfersGameplay")
+local GameConfig = loadModuleSafe("GameConfig") :: any
+local SubwaySurfersGameplay = loadModuleSafe("SubwaySurfersGameplay") :: any
 
 -- Enhanced Type Definitions
 export type SegmentData = {
