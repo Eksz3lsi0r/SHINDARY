@@ -1282,3 +1282,43 @@ stack traceback:
         Holdon:   0
         Waiting:  0
 ==============================================
+[00:00:35.052][error][#0:script/config.lua:265]: script/config.lua:265: bad argument #1 to 'for iterator' (table expected, got boolean)
+stack traceback:
+	script/config.lua:265: in function <script/config.lua:263>
+	[C]: in function 'xpcall'
+	script/config.lua:263: in function 'config.setConfig'
+	script/provider/provider.lua:66: in upvalue 'updateConfig'
+	script/provider/provider.lua:199: in function <script/provider/provider.lua:198>
+	[C]: in function 'xpcall'
+	script/proto/proto.lua:143: in function <script/proto/proto.lua:122>
+[00:00:39.271][error][#0:script/config.lua:265]: script/config.lua:265: bad argument #1 to 'for iterator' (table expected, got boolean)
+stack traceback:
+	script/config.lua:265: in function <script/config.lua:263>
+	[C]: in function 'xpcall'
+	script/config.lua:263: in function 'config.setConfig'
+	script/provider/provider.lua:66: in upvalue 'updateConfig'
+	script/provider/provider.lua:199: in function <script/provider/provider.lua:198>
+	[C]: in function 'xpcall'
+	script/proto/proto.lua:143: in function <script/proto/proto.lua:122>
+[00:01:24.367][debug][#0:script/service/service.lua:136]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 46.393 MB
+        # 00 : 39.164 MB
+        # 01 : 1.699 MB
+        # 02 : 1.940 MB
+        # 03 : 1.892 MB
+        # 04 : 1.699 MB
+    --------------- Coroutine ---------------
+        Total:     32
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      32
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    --------------- Proto ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
