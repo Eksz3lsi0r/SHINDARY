@@ -1,0 +1,108 @@
+{
+  "projectType": "Roblox Lua Game Development",
+  "framework": "Roblox Studio + Luau",
+  "architecture": "Client-Server Architecture",
+  "mainLanguage": "Luau",
+  "context": {
+    "projectName": "Subway Surfers Clone",
+    "gameType": "Endless Runner",
+    "targetPlatform": "Roblox",
+    "mainFeatures": [
+      "Player movement (lanes, jump, slide)",
+      "Obstacle spawning system",
+      "Collectible system (coins, gems, power-ups)",
+      "Score tracking and leaderboards",
+      "Power-up effects (jetpack, super sneakers, coin magnet)",
+      "Camera following system",
+      "Object pooling for performance",
+      "Remote events for client-server communication"
+    ]
+  },
+  "codebaseStructure": {
+    "client": {
+      "controllers": [
+        "PlayerController.client.lua - Main player movement and input",
+        "CameraController.lua - Camera following and effects"
+      ],
+      "modules": [
+        "AudioController.lua - Sound effects and music",
+        "EffectsController.lua - Visual effects system",
+        "InputHandler.lua - Input management",
+        "UIController.lua - User interface management"
+      ]
+    },
+    "server": {
+      "services": [
+        "GameManager.lua - Main game coordination",
+        "ObstacleService.lua - Obstacle spawning and management",
+        "PlayerDataService.lua - Player data persistence",
+        "PowerUpService.lua - Power-up effects management",
+        "ScoreService.lua - Score tracking and calculation",
+        "ServiceInitializer.server.lua - Service initialization order",
+        "RemoteEventsService.lua - Remote event management",
+        "WorldBuilder.lua - World generation"
+      ]
+    },
+    "shared": [
+      "GameConfig.lua - Configuration settings",
+      "GameState.lua - Game state management",
+      "ObjectPool.lua - Performance optimization",
+      "SegmentSpawner.lua - Track segment generation",
+      "SubwaySurfersGameplay.lua - Core gameplay mechanics"
+    ]
+  },
+  "codingPatterns": {
+    "errorHandling": "pcall() for safe operations",
+    "typeChecking": "--!strict annotations",
+    "performance": "Object pooling, RunService connections",
+    "architecture": "Service pattern, ModuleScript organization",
+    "networking": "RemoteEvents validation, rate limiting"
+  },
+  "commonTasks": [
+    "Add new obstacle types",
+    "Create new power-up effects",
+    "Implement UI animations",
+    "Add sound effects",
+    "Optimize performance",
+    "Debug RemoteEvent issues",
+    "Add new collectible types",
+    "Improve camera movement",
+    "Search and analyze code patterns",
+    "Find code usages and dependencies",
+    "Perform semantic code analysis",
+    "Generate enhanced documentation"
+  ],
+  "enhancedFeatures": {
+    "searchCapabilities": {
+      "semanticSearch": "AI-powered code pattern recognition",
+      "workspaceSearch": "Complete workspace symbol analysis",
+      "usageAnalysis": "Code dependency and usage tracking",
+      "patternDetection": "Automatic code pattern identification"
+    },
+    "codeAnalysis": {
+      "functionMapping": "Automatic function relationship mapping",
+      "serviceTracking": "Roblox service usage optimization",
+      "eventFlow": "RemoteEvent communication analysis",
+      "performanceInsights": "Code performance bottleneck detection"
+    },
+    "aiIntegration": {
+      "contextAwareSearch": "Search results enhanced with AI insights",
+      "smartSuggestions": "AI-generated optimization recommendations",
+      "codeQualityAnalysis": "Automated code quality assessment",
+      "refactoringHints": "Intelligent refactoring suggestions"
+    }
+  },
+  "aiContext": {
+    "preferredStyle": "Clear, commented Luau code",
+    "debuggingApproach": "Print statements and error handling",
+    "optimizationFocus": "Memory usage and frame rate",
+    "testingMethod": "Manual testing in Roblox Studio"
+  },
+  "copilotOptimization": {
+    "useTypeAnnotations": true,
+    "preferModularCode": true,
+    "includePerformanceComments": true,
+    "addDebuggingHelpers": true,
+    "optimizeForReadability": true
+  }
+}

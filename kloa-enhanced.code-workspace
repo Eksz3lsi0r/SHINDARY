@@ -1,0 +1,62 @@
+{
+  "folders": [
+    {
+      "name": "Roblox Lua Project - Subway Surfers Clone",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "github.copilot.chat.experimental.codebaseContext": true,
+    "github.copilot.chat.experimental.contextualSearch": true,
+    "github.copilot.chat.experimental.enhancedContext": true,
+    "github.copilot.chat.experimental.useSymbols": true,
+    "github.copilot.chat.experimental.smartSelection": true,
+    "github.copilot.chat.experimental.codeAnalysis": true,
+    "github.copilot.chat.experimental.workspaceSearch": true,
+    "workbench.experimental.copilotChat.enabledInCodeActions": true,
+    "workbench.experimental.copilotChat.enabledInInlineChat": true
+  },
+  "extensions": {
+    "recommendations": [
+      "JohnnyMorganz.luau-lsp",
+      "nightrains.robloxlsp",
+      "JohnnyMorganz.stylua",
+      "GitHub.copilot",
+      "GitHub.copilot-chat"
+    ]
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Debug Roblox Project with Enhanced Context",
+        "type": "node",
+        "request": "launch",
+        "program": "${workspaceFolder}/src/shared/roblox_lua_project.lua",
+        "console": "integratedTerminal",
+        "env": {
+          "COPILOT_ENHANCED_CONTEXT": "true",
+          "ROBLOX_PROJECT_TYPE": "subway_surfers_clone"
+        }
+      }
+    ]
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Enhanced Copilot: Analyze Project",
+        "type": "shell",
+        "command": "echo",
+        "args": ["🤖 Enhanced Copilot Context Analysis für Roblox Lua Projekt gestartet..."],
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared"
+        }
+      }
+    ]
+  }
+}

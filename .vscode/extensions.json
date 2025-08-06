@@ -1,0 +1,23 @@
+{
+  "recommendations": [
+    "JohnnyMorganz.luau-lsp",
+    "nightrains.robloxlsp",
+    "JohnnyMorganz.stylua",
+    "GitHub.copilot",
+    "GitHub.copilot-chat",
+    "DavidAnson.vscode-markdownlint",
+    "ms-vscode.vscode-json",
+    "bradlc.vscode-tailwindcss",
+    "PKief.material-icon-theme",
+    "ms-vscode.hexeditor",
+    "redhat.vscode-yaml",
+    "formulahendry.auto-rename-tag",
+    "christian-kohler.path-intellisense",
+    "streetsidesoftware.code-spell-checker",
+    "eamodio.gitlens",
+    "ms-vscode.vscode-typescript-next"
+  ],
+  "unwantedRecommendations": [
+    "ms-vscode.vscode-typescript"
+  ]
+}

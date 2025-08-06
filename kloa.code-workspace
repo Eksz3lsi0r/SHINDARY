@@ -1,0 +1,16 @@
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "files.exclude": {
+            "**/node_modules": true,
+            "**/Packages": true,
+            "**/.git": true
+        },
+        "explorer.excludeGitIgnore": false,
+        "explorer.autoReveal": true
+    }
+}

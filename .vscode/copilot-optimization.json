@@ -1,0 +1,44 @@
+{
+  "copilotOptimizations": {
+    "contextEnhancement": {
+      "useExperimentalCodebaseContext": true,
+      "enableContextualSearch": true,
+      "enhanceSymbolDetection": true,
+      "smartSelectionEnabled": true,
+      "workspaceSearchIntegration": true,
+      "codeAnalysisEnabled": true
+    },
+    "robloxSpecific": {
+      "luauTypeInference": true,
+      "robloxAPIContext": true,
+      "rojoSyncIntegration": true,
+      "servicePatternRecognition": true,
+      "remoteEventAnalysis": true,
+      "performanceOptimizations": true
+    },
+    "searchCapabilities": {
+      "semanticSearch": true,
+      "patternRecognition": true,
+      "dependencyTracking": true,
+      "usageAnalysis": true,
+      "crossFileReferences": true
+    },
+    "aiIntegration": {
+      "enhancedSuggestions": true,
+      "contextAwareCompletion": true,
+      "smartRefactoring": true,
+      "codeQualityAnalysis": true,
+      "performanceInsights": true
+    },
+    "developerExperience": {
+      "germanLocalization": true,
+      "quickActions": true,
+      "enhancedKeybindings": true,
+      "visualFeedback": true,
+      "debuggingSupport": true
+    }
+  },
+  "status": "optimized",
+  "lastUpdated": "2025-08-06",
+  "version": "1.0.0"
+}

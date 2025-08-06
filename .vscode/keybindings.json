@@ -1,0 +1,47 @@
+[
+  {
+    "key": "cmd+shift+c",
+    "command": "workbench.action.chat.open",
+    "when": "!inChatInput"
+  },
+  {
+    "key": "cmd+shift+i",
+    "command": "workbench.action.chat.openInlineChat",
+    "when": "editorTextFocus && !inChatInput"
+  },
+  {
+    "key": "cmd+shift+s",
+    "command": "roblox.semanticSearch",
+    "when": "workspaceFolderCount > 0"
+  },
+  {
+    "key": "cmd+shift+w",
+    "command": "roblox.workspaceSearch",
+    "when": "workspaceFolderCount > 0"
+  },
+  {
+    "key": "cmd+shift+u",
+    "command": "roblox.findCodeUsages",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "cmd+shift+r",
+    "command": "rojo.start",
+    "when": "workspaceContains:default.project.json"
+  },
+  {
+    "key": "cmd+shift+b",
+    "command": "rojo.build",
+    "when": "workspaceContains:default.project.json"
+  },
+  {
+    "key": "alt+shift+f",
+    "command": "stylua.format",
+    "when": "editorLangId == luau"
+  },
+  {
+    "key": "cmd+k cmd+c",
+    "command": "workbench.action.chat.sendToChat",
+    "when": "editorHasSelection"
+  }
+]

@@ -1,0 +1,12 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Roblox Project",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/shared/roblox_lua_project.lua",
+            "console": "integratedTerminal"
+        }
+    ]
+}
