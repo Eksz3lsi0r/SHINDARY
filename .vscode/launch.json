@@ -44,18 +44,41 @@
             "internalConsoleOptions": "neverOpen"
         },
         {
-            "type": "luau",
+            "type": "lua-local",
             "request": "attach",
-            "name": "attach to luau debugger",
-            "address": "localhost",
-            "port": 58000
+            "name": "Attach to Roblox Studio",
+            "host": "127.0.0.1",
+            "port": 8172,
+            "stopOnEntry": false,
+            "sourceRoot": "${workspaceFolder}",
+            "destRoot": ""
         },
         {
-            "type": "luau",
+            "type": "lua-local",
             "request": "launch",
-            "name": "launch luau debugger",
-            "program": "${workspaceFolder}/main.lua",
-            "port": 58000
+            "name": "Debug",
+            "program": {
+                "lua": "lua5.1",
+                "file": "${workspaceFolder}/main.lua"
+            },
+            "cwd": "${workspaceFolder}",
+            "interpreter": "lua5.1",
+            "sourceRoot": "${workspaceFolder}"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Rojo + Debugger",
+            "configurations": [
+                "Serve Roblox Project",
+                "Attach to Roblox Studio"
+            ],
+            "stopAll": true,
+            "presentation": {
+                "hidden": false,
+                "group": "Roblox Development",
+                "order": 1
+            }
         }
     ]
 }
