@@ -1,0 +1,40 @@
+{
+    "name": "subway-surfers-roblox",
+    "version": "1.0.0",
+    "description": "Subway Surfers Game für Roblox - Endless Runner mit dynamischer Welt-Generierung",
+    "main": "src/server/SubwaySurfersLauncher.server.lua",
+    "scripts": {
+        "serve": "rojo serve",
+        "serve:dev": "./scripts/start-rojo.sh",
+        "serve:port": "rojo serve --port 34873 --verbose",
+        "build": "mkdir -p builds && rojo build --output builds/SubwaySurfersGame.rbxlx",
+        "build:game": "mkdir -p builds && rojo build --output builds/SubwaySurfersGame.rbxl",
+        "validate": "rojo build --dry-run",
+        "clean": "rm -rf builds/*",
+        "dev": "npm run clean && npm run serve:dev"
+    },
+    "keywords": [
+        "roblox",
+        "subway-surfers",
+        "endless-runner",
+        "game",
+        "lua",
+        "rojo"
+    ],
+    "author": "SHINDARY Development Team",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Eksz3lsi0r/SHINDARY.git"
+    },
+    "devDependencies": {
+        "@types/rbx-types": "latest"
+    },
+    "rojo": {
+        "projectFile": "default.project.json",
+        "servePort": 34872
+    },
+    "engines": {
+        "rojo": ">=7.0.0"
+    }
+}

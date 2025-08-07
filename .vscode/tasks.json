@@ -1,0 +1,84 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Rojo: Start Development Server",
+            "type": "shell",
+            "command": "./scripts/start-rojo.sh",
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "new"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "isBackground": true
+        },
+        {
+            "label": "Rojo: Build Place File",
+            "type": "shell",
+            "command": "rojo",
+            "args": [
+                "build",
+                "--output",
+                "builds/SubwaySurfersGame.rbxlx"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Rojo: Build Game File",
+            "type": "shell",
+            "command": "rojo",
+            "args": [
+                "build",
+                "--output",
+                "builds/SubwaySurfersGame.rbxl"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Rojo: Validate Project",
+            "type": "shell",
+            "command": "rojo",
+            "args": [
+                "build",
+                "--dry-run"
+            ],
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": []
+        }
+    ]
+}

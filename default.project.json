@@ -1,0 +1,111 @@
+{
+    "name": "SubwaySurfersGame",
+    "tree": {
+        "$className": "DataModel",
+        "ReplicatedStorage": {
+            "$className": "ReplicatedStorage",
+            "RemoteEvents": {
+                "$className": "Folder",
+                "GameStart": {
+                    "$className": "RemoteEvent"
+                },
+                "GameEnd": {
+                    "$className": "RemoteEvent"
+                },
+                "GameRestart": {
+                    "$className": "RemoteEvent"
+                },
+                "PlayerCollision": {
+                    "$className": "RemoteEvent"
+                },
+                "CoinCollected": {
+                    "$className": "RemoteEvent"
+                },
+                "PowerUpCollected": {
+                    "$className": "RemoteEvent"
+                },
+                "PowerUpActivated": {
+                    "$className": "RemoteEvent"
+                },
+                "PowerUpDeactivated": {
+                    "$className": "RemoteEvent"
+                },
+                "ScoreUpdate": {
+                    "$className": "RemoteEvent"
+                },
+                "ObstacleSpawned": {
+                    "$className": "RemoteEvent"
+                },
+                "CollectibleSpawned": {
+                    "$className": "RemoteEvent"
+                },
+                "SegmentSpawned": {
+                    "$className": "RemoteEvent"
+                },
+                "UIUpdate": {
+                    "$className": "RemoteEvent"
+                },
+                "PlayerAction": {
+                    "$className": "RemoteEvent"
+                },
+                "GameStateChanged": {
+                    "$className": "RemoteEvent"
+                }
+            },
+            "RemoteFunctions": {
+                "$className": "Folder",
+                "GetServerStatus": {
+                    "$className": "RemoteFunction"
+                },
+                "GetLeaderboard": {
+                    "$className": "RemoteFunction"
+                },
+                "PurchaseItem": {
+                    "$className": "RemoteFunction"
+                }
+            },
+            "Shared": {
+                "$className": "Folder",
+                "$path": "src/shared"
+            },
+            "ServerReady": {
+                "$className": "BoolValue",
+                "$properties": {
+                    "Value": false
+                }
+            },
+            "GameManagerReady": {
+                "$className": "BoolValue",
+                "$properties": {
+                    "Value": false
+                }
+            },
+            "ServicesReady": {
+                "$className": "BoolValue",
+                "$properties": {
+                    "Value": false
+                }
+            },
+            "ServerPerformance": {
+                "$className": "StringValue",
+                "$properties": {
+                    "Value": "Initializing..."
+                }
+            }
+        },
+        "ServerScriptService": {
+            "$className": "ServerScriptService",
+            "$path": "src/server"
+        },
+        "StarterPlayer": {
+            "$className": "StarterPlayer",
+            "StarterPlayerScripts": {
+                "$className": "StarterPlayerScripts",
+                "$path": "src/client"
+            }
+        },
+        "Workspace": {
+            "$className": "Workspace"
+        }
+    }
+}
