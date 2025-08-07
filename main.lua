@@ -1,5 +1,11 @@
 --!strict
 
+-- Debugger aktivieren wenn verfügbar
+local success, lldebugger = pcall(require, "lldebugger")
+if success then
+	lldebugger.start()
+end
+
 -- Hauptprogramm für das Roblox-Projekt
 -- Initialisiert die Spielumgebung und startet die Hauptlogik
 

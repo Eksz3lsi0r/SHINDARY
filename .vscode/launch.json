@@ -64,6 +64,19 @@
             "cwd": "${workspaceFolder}",
             "interpreter": "lua5.1",
             "sourceRoot": "${workspaceFolder}"
+        },
+        {
+            "type": "lua-local",
+            "request": "launch",
+            "name": "Debug Custom Lua Executable",
+            "program": {
+                "command": "lua5.1"
+            },
+            "args": [
+                "${workspaceFolder}/main.lua"
+            ],
+            "cwd": "${workspaceFolder}",
+            "sourceRoot": "${workspaceFolder}"
         }
     ],
     "compounds": [
