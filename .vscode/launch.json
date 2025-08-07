@@ -5,6 +5,45 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "node",
+            "request": "launch",
+            "name": "Serve Roblox Project",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": [
+                "run",
+                "serve"
+            ],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Serve Roblox Project (Dev)",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": [
+                "run",
+                "serve:dev"
+            ],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Build Roblox Project",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": [
+                "run",
+                "build"
+            ],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
+        },
+        {
             "type": "luau",
             "request": "attach",
             "name": "attach to luau debugger",
@@ -17,31 +56,6 @@
             "name": "launch luau debugger",
             "program": "${workspaceFolder}/main.lua",
             "port": 58000
-        },
-        {
-            "type": "lua",
-            "name": "Launch Lua",
-            "request": "launch",
-            "program": "${workspaceFolder}/src/server/main.server.lua",
-            "cwd": "${workspaceFolder}",
-            "stopOnEntry": false,
-            "args": [],
-            "env": {},
-            "console": "integratedTerminal"
-        },
-        {
-            "type": "luau",
-            "request": "launch",
-            "name": "launch luau debugger with args",
-            "program": "${workspaceFolder}/main.lua",
-            "port": 58000,
-            "args": [
-                "--debug",
-                "--verbose"
-            ],
-            "env": {
-                "ENV_VAR": "value"
-            }
         }
     ]
 }
